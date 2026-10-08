@@ -1,0 +1,2692 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Healthy Bosses Network | AI-Powered Growth Systems for Health & Wellness Leaders</title>
+  
+  <!-- Google Fonts: Plus Jakarta Sans for high-tech precision & Playfair Display for editorial wellness warmth -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome 6 for crisp luxury icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Tailwind Configuration -->
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              gold: '#D4AF37',
+              'gold-light': '#F5D061',
+              'gold-dark': '#A37F15',
+              emerald: '#059669',
+              'emerald-light': '#10B981',
+              dark: '#080C14',
+              'dark-card': '#0E1524',
+              'dark-border': '#1E293B',
+              slate: '#1E293B',
+              muted: '#94A3B8',
+              pearl: '#F8FAFC'
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            serif: ['"Playfair Display"', 'Georgia', 'serif']
+          },
+          boxShadow: {
+            'glow-gold': '0 0 35px -5px rgba(212, 175, 55, 0.35)',
+            'glow-emerald': '0 0 35px -5px rgba(16, 185, 129, 0.30)',
+            'glass': '0 8px 32px 0 rgba(0, 0, 0, 0.45)'
+          },
+          animation: {
+            'float-slow': 'float 6s ease-in-out infinite',
+            'pulse-subtle': 'pulseSubtle 4s ease-in-out infinite',
+            'shimmer': 'shimmer 2.5s infinite linear'
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-10px)' }
+            },
+            pulseSubtle: {
+              '0%, 100%': { opacity: '0.9', transform: 'scale(1)' },
+              '50%': { opacity: '1', transform: 'scale(1.02)' }
+            },
+            shimmer: {
+              '0%': { backgroundPosition: '-200% 0' },
+              '100%': { backgroundPosition: '200% 0' }
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom CSS for editorial aesthetics, glassmorphism, and micro-interactions -->
+  <style>
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #080C14;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #1E293B;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #D4AF37;
+    }
+
+    .glass-panel {
+      background: rgba(14, 21, 36, 0.75);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .glass-card-hover {
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .glass-card-hover:hover {
+      transform: translateY(-5px);
+      border-color: rgba(212, 175, 55, 0.4);
+      box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.7), 0 0 25px -5px rgba(212, 175, 55, 0.2);
+    }
+    
+    .gold-gradient-text {
+      background: linear-gradient(135deg, #FFF6D6 0%, #F5D061 30%, #D4AF37 70%, #9B7811 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
+    .emerald-gradient-text {
+      background: linear-gradient(135deg, #D1FAE5 0%, #34D399 50%, #059669 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .noise-bg {
+      background-image: radial-gradient(rgba(212, 175, 55, 0.07) 1px, transparent 0);
+      background-size: 32px 32px;
+    }
+
+    /* Brand Entrance / Pop-Up Animation on Page Load & Refresh */
+    @keyframes brandLogoPopUp {
+      0% {
+        opacity: 0;
+        transform: scale(0.35) rotate(-15deg) translateY(24px);
+        filter: blur(12px) brightness(1.8);
+      }
+      55% {
+        opacity: 1;
+        transform: scale(1.18) rotate(3deg) translateY(-4px);
+        filter: blur(0px) brightness(1.2);
+      }
+      75% {
+        transform: scale(0.94) rotate(-1deg) translateY(2px);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1) rotate(0deg) translateY(0);
+        filter: blur(0px) brightness(1);
+      }
+    }
+
+    @keyframes brandTextPopUp {
+      0% {
+        opacity: 0;
+        transform: translateX(-24px) scale(0.85);
+        filter: blur(10px);
+      }
+      60% {
+        opacity: 1;
+        transform: translateX(5px) scale(1.04);
+        filter: blur(0px);
+      }
+      80% {
+        transform: translateX(-2px) scale(0.98);
+      }
+      100% {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+        filter: blur(0px);
+      }
+    }
+
+    @keyframes brandGlowFlash {
+      0% {
+        box-shadow: 0 0 0 0 rgba(212, 175, 55, 0);
+      }
+      40% {
+        box-shadow: 0 0 45px 12px rgba(245, 208, 97, 0.9), 0 0 70px 24px rgba(212, 175, 55, 0.45);
+      }
+      100% {
+        box-shadow: 0 0 15px -2px rgba(212, 175, 55, 0.35);
+      }
+    }
+
+    /* Attached classes for instant refresh pop-up */
+    .brand-popup-logo {
+      animation: brandLogoPopUp 1s cubic-bezier(0.34, 1.56, 0.64, 1) forwards,
+                 brandGlowFlash 1.4s ease-out forwards;
+      transform-origin: center center;
+      will-change: transform, opacity, filter, box-shadow;
+    }
+
+    .brand-popup-text {
+      animation: brandTextPopUp 1.05s cubic-bezier(0.16, 1, 0.3, 1) 0.12s both;
+      transform-origin: left center;
+      will-change: transform, opacity, filter;
+    }
+
+    /* Professional Circular Logo Animation */
+    @keyframes logoPulseGlow {
+      0%, 100% {
+        box-shadow: 0 0 15px -2px rgba(212, 175, 55, 0.35), inset 0 0 10px rgba(212, 175, 55, 0.2);
+      }
+      50% {
+        box-shadow: 0 0 25px 3px rgba(212, 175, 55, 0.65), inset 0 0 16px rgba(212, 175, 55, 0.38);
+      }
+    }
+    
+    @keyframes logoShimmerRotate {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    .logo-circle-container {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 9999px;
+      overflow: hidden;
+      animation: logoPulseGlow 3.5s ease-in-out infinite;
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+    }
+
+    .logo-circle-container::before {
+      content: '';
+      position: absolute;
+      inset: -50%;
+      background: conic-gradient(from 0deg, transparent 0%, rgba(212, 175, 55, 0.75) 25%, transparent 50%, rgba(245, 208, 97, 0.85) 75%, transparent 100%);
+      animation: logoShimmerRotate 7s linear infinite;
+      opacity: 0.8;
+      transition: opacity 0.3s ease;
+    }
+
+    .group:hover .logo-circle-container::before {
+      opacity: 1;
+      animation-duration: 3.5s;
+    }
+
+    .group:hover .logo-circle-container {
+      transform: scale(1.08) rotate(3deg);
+      box-shadow: 0 0 30px 5px rgba(212, 175, 55, 0.75), inset 0 0 18px rgba(212, 175, 55, 0.5);
+    }
+
+    .logo-circle-inner {
+      position: relative;
+      z-index: 10;
+      border-radius: 9999px;
+      background: radial-gradient(circle at 35% 35%, #182235 0%, #080C14 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    /* Message animation */
+    .chat-bubble-enter {
+      animation: bubbleIn 0.3s ease-out forwards;
+    }
+    @keyframes bubbleIn {
+      from {
+        opacity: 0;
+        transform: translateY(8px) scale(0.96);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    /* Editorial image frame styles */
+    .editorial-frame {
+      position: relative;
+      border-radius: 1.5rem;
+      overflow: hidden;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+    }
+    .editorial-frame::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      pointer-events: none;
+    }
+  </style>
+</head>
+
+<body class="bg-brand-dark text-slate-100 font-sans antialiased overflow-x-hidden selection:bg-brand-gold selection:text-brand-dark">
+
+  <!-- Top Announcement Bar -->
+  <div class="bg-gradient-to-r from-amber-950/60 via-brand-dark to-emerald-950/60 border-b border-amber-500/20 py-2 px-4 text-xs font-medium text-slate-300">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-[10px] font-bold bg-amber-400/20 text-brand-gold-light border border-brand-gold/30 uppercase tracking-widest">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span>
+          2026 Operating Standard
+        </span>
+        <span class="hidden sm:inline text-slate-300">New: 24/7 Voice &amp; SMS AI Employee with HIPAA-Aware Intake</span>
+      </div>
+      <div class="flex items-center gap-4 text-slate-400">
+        <a href="tel:8888639399" class="hover:text-brand-gold transition-colors flex items-center gap-1.5 text-xs">
+          <i class="fa-solid fa-phone text-[10px] text-brand-gold"></i>
+          (888) 863-9399
+        </a>
+        <span class="hidden md:inline text-slate-700">|</span>
+        <button onclick="openAuditModal()" class="text-brand-gold-light hover:text-white font-semibold underline underline-offset-2 flex items-center gap-1">
+          Free Marketing Audit <i class="fa-solid fa-arrow-right text-[10px]"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Floating Sticky Navigation -->
+  <header class="sticky top-0 z-50 transition-all duration-300 bg-brand-dark/90 backdrop-blur-xl border-b border-white/10 shadow-lg shadow-black/20" id="mainHeader">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4 sm:gap-6 lg:gap-8">
+      
+      <!-- Brand Logo + Text with Refresh Pop-Up Effect -->
+      <a href="#" class="flex items-center gap-3 sm:gap-3.5 group focus:outline-none py-1 shrink-0 mr-4 sm:mr-6 lg:mr-8 xl:mr-10">
+        <div class="relative flex-shrink-0 brand-popup-logo">
+          <div class="logo-circle-container p-[2px] w-11 h-11 sm:w-12 sm:h-12 shadow-glow-gold">
+            <div class="logo-circle-inner w-full h-full p-1 border border-brand-gold/40">
+              <img 
+                src="https://raw.githubusercontent.com/CreativeTugsDotCom/ijj/refs/heads/main/logo-CbXQjwn1.png" 
+                alt="Healthy Bosses Network Logo" 
+                class="w-full h-full object-cover rounded-full transition-transform duration-500 group-hover:scale-110"
+              >
+            </div>
+          </div>
+          <!-- Real-time Active Pulse Dot -->
+          <span class="absolute -bottom-0.5 -right-0.5 w-3.5 h-3.5 rounded-full bg-emerald-400 border-2 border-brand-dark shadow-sm">
+            <span class="absolute inset-0 rounded-full bg-emerald-400 animate-ping opacity-75"></span>
+          </span>
+        </div>
+        
+        <!-- Brand Name with Synced Pop-Up Spring Effect -->
+        <div class="flex flex-col brand-popup-text">
+          <span class="font-extrabold tracking-tight text-white text-base sm:text-lg leading-tight uppercase font-sans group-hover:text-brand-gold-light transition-colors drop-shadow-sm">
+            Healthy Bosses <span class="text-brand-gold">Network</span>
+          </span>
+          <span class="text-[9px] sm:text-[10px] uppercase tracking-[0.22em] text-slate-400 font-semibold flex items-center gap-1.5 mt-0.5">
+            <span class="w-1 h-1 rounded-full bg-brand-gold"></span>
+            Business Solutions for Health
+          </span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="hidden lg:flex items-center gap-1 xl:gap-2 text-sm font-medium text-slate-300 bg-white/[0.03] p-1.5 rounded-2xl border border-white/5 ml-2 lg:ml-6 xl:ml-8">
+        <a href="#growth-machine" class="px-3.5 py-1.5 rounded-xl hover:text-white hover:bg-white/5 transition-all flex items-center gap-1.5 text-xs font-semibold">
+          <span class="w-1.5 h-1.5 rounded-full bg-brand-gold"></span> Growth Machine
+        </a>
+        <a href="#ai-employee" class="px-3.5 py-1.5 rounded-xl hover:text-white hover:bg-white/5 transition-all flex items-center gap-1.5 text-xs font-semibold">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> AI Employee
+        </a>
+        <a href="#industries" class="px-3 py-1.5 rounded-xl hover:text-white hover:bg-white/5 transition-all text-xs font-semibold">Industries</a>
+        <a href="#results" class="px-3 py-1.5 rounded-xl hover:text-white hover:bg-white/5 transition-all text-xs font-semibold">Case Studies</a>
+        <a href="#pricing" class="px-3 py-1.5 rounded-xl hover:text-white hover:bg-white/5 transition-all text-xs font-semibold">Pricing</a>
+        <a href="#shop" class="px-3 py-1.5 rounded-xl hover:text-white hover:bg-white/5 transition-all flex items-center gap-1.5 text-xs font-semibold">
+          Tools <span class="text-[9px] bg-amber-400/20 text-brand-gold px-1.5 py-0.5 rounded font-bold">Shop</span>
+        </a>
+      </nav>
+
+      <!-- Action Buttons -->
+      <div class="flex items-center gap-2.5 sm:gap-3">
+        <button onclick="openAuditModal()" class="hidden md:inline-flex items-center gap-2 px-3.5 sm:px-4 py-2 rounded-xl border border-brand-gold/40 text-brand-gold-light hover:bg-brand-gold/15 font-bold text-xs tracking-wide uppercase transition-all duration-200 shadow-sm hover:border-brand-gold">
+          <i class="fa-solid fa-chart-pie text-xs"></i>
+          <span>Free Audit</span>
+        </button>
+        <a href="#apply" class="relative group overflow-hidden px-4 sm:px-5 py-2.5 rounded-xl bg-gradient-to-r from-amber-500 via-brand-gold to-yellow-500 text-brand-dark font-extrabold text-xs tracking-wider uppercase shadow-lg shadow-amber-500/25 hover:shadow-brand-gold/50 hover:scale-[1.03] active:scale-[0.98] transition-all duration-200 flex items-center gap-2">
+          <span class="relative z-10 flex items-center gap-1.5">
+            Apply Now
+            <i class="fa-solid fa-arrow-right-long text-xs group-hover:translate-x-1 transition-transform"></i>
+          </span>
+          <div class="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
+        </a>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button id="mobileMenuBtn" class="lg:hidden p-2.5 text-slate-300 hover:text-white rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 transition-colors focus:outline-none" aria-label="Toggle menu">
+          <i id="mobileMenuIcon" class="fa-solid fa-bars text-lg"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Menu Overlay -->
+    <div id="mobileMenu" class="hidden lg:hidden border-t border-white/10 bg-brand-dark/95 backdrop-blur-2xl transition-all duration-300 max-h-[calc(100vh-5rem)] overflow-y-auto">
+      <div class="max-w-7xl mx-auto px-6 py-6 space-y-4">
+        <div class="grid grid-cols-2 gap-2 text-xs font-semibold">
+          <a href="#growth-machine" class="mobile-nav-link p-3 rounded-xl bg-white/[0.03] border border-white/5 text-slate-200 hover:text-brand-gold flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-brand-gold"></span> Growth Machine
+          </a>
+          <a href="#ai-employee" class="mobile-nav-link p-3 rounded-xl bg-white/[0.03] border border-white/5 text-slate-200 hover:text-brand-gold flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-emerald-400"></span> AI Employee
+          </a>
+          <a href="#industries" class="mobile-nav-link p-3 rounded-xl bg-white/[0.03] border border-white/5 text-slate-200 hover:text-brand-gold flex items-center gap-2">
+            <i class="fa-solid fa-stethoscope text-brand-gold/70 text-[11px]"></i> Industries
+          </a>
+          <a href="#results" class="mobile-nav-link p-3 rounded-xl bg-white/[0.03] border border-white/5 text-slate-200 hover:text-brand-gold flex items-center gap-2">
+            <i class="fa-solid fa-chart-line text-emerald-400/70 text-[11px]"></i> Case Studies
+          </a>
+          <a href="#pricing" class="mobile-nav-link p-3 rounded-xl bg-white/[0.03] border border-white/5 text-slate-200 hover:text-brand-gold flex items-center gap-2">
+            <i class="fa-solid fa-tags text-sky-400/70 text-[11px]"></i> Pricing
+          </a>
+          <a href="#shop" class="mobile-nav-link p-3 rounded-xl bg-white/[0.03] border border-white/5 text-slate-200 hover:text-brand-gold flex items-center gap-2">
+            <i class="fa-solid fa-toolbox text-amber-400/70 text-[11px]"></i> Growth Store
+          </a>
+        </div>
+
+        <div class="pt-4 border-t border-slate-800/80 flex flex-col gap-3">
+          <button onclick="openAuditModal(); toggleMobileMenu(false);" class="w-full text-center py-3.5 rounded-xl border border-brand-gold/50 bg-brand-gold/10 text-brand-gold-light font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2">
+            <i class="fa-solid fa-calculator text-xs"></i> Free Automation Audit
+          </button>
+          <a href="#apply" onclick="toggleMobileMenu(false);" class="w-full text-center py-3.5 rounded-xl bg-gradient-to-r from-amber-400 via-brand-gold to-yellow-500 text-brand-dark font-extrabold text-xs uppercase tracking-wider shadow-lg flex items-center justify-center gap-2">
+            <span>Apply for Growth System</span>
+            <i class="fa-solid fa-arrow-right text-xs"></i>
+          </a>
+          <div class="flex items-center justify-center gap-4 pt-2 text-xs text-slate-400">
+            <a href="tel:8888639399" class="hover:text-brand-gold flex items-center gap-1.5">
+              <i class="fa-solid fa-phone text-brand-gold text-[11px]"></i> (888) 863-9399
+            </a>
+            <span>•</span>
+            <span class="flex items-center gap-1.5 text-emerald-400">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> 24/7 AI Online
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="relative pt-12 pb-24 lg:pt-20 lg:pb-32 overflow-hidden noise-bg">
+    <!-- Glow Orbs in Background -->
+    <div class="absolute top-10 left-1/2 -translate-x-1/2 w-[700px] h-[400px] bg-gradient-to-b from-amber-500/15 via-emerald-500/10 to-transparent blur-3xl pointer-events-none rounded-full"></div>
+    <div class="absolute -top-24 right-0 w-96 h-96 bg-brand-gold/10 blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <!-- Top Eyebrow Tag -->
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-3 mb-8">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-amber-400/30 text-xs text-slate-200 shadow-sm backdrop-blur-md">
+          <span class="flex h-2 w-2 relative">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+          </span>
+          <span class="font-semibold text-brand-gold-light">The Automated Growth Department</span>
+          <span class="text-slate-500">•</span>
+          <span class="text-slate-300">SaaS &amp; AI For Health Businesses</span>
+        </div>
+      </div>
+
+      <!-- Core Hero Headline: Bold, Editorial, Authoritative -->
+      <div class="text-center max-w-4xl mx-auto mb-8">
+        <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.08] text-white">
+          Turn Your Website Into An <br class="hidden sm:inline">
+          <span class="gold-gradient-text font-serif italic font-normal">AI-Powered</span> Growth System.
+        </h1>
+        <p class="mt-6 text-lg sm:text-xl text-slate-300 font-light leading-relaxed max-w-2xl mx-auto">
+          <strong class="text-white font-semibold">You know your craft. We know how to run the business.</strong> Replace scattered tools, missed leads, and manual follow-ups with one autonomous client acquisition engine.
+        </p>
+
+        <!-- CTA Action Bar -->
+        <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <button onclick="openAuditModal()" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-amber-400 via-brand-gold to-yellow-500 text-brand-dark font-extrabold text-sm uppercase tracking-wider shadow-glow-gold hover:scale-105 active:scale-95 transition-all flex items-center justify-center gap-3">
+            <i class="fa-solid fa-calculator text-base"></i>
+            Take Free Automation Assessment
+          </button>
+          <a href="#apply" class="w-full sm:w-auto px-8 py-4 rounded-xl border border-white/20 bg-white/5 hover:bg-white/10 text-white font-bold text-sm uppercase tracking-wider transition-all flex items-center justify-center gap-3">
+            <i class="fa-solid fa-calendar-check text-brand-gold"></i>
+            Book Strategy Call
+          </a>
+        </div>
+
+        <!-- Social Proof Micro-Bar -->
+        <div class="mt-8 flex flex-wrap items-center justify-center gap-6 text-xs text-slate-400">
+          <div class="flex items-center gap-2">
+            <i class="fa-solid fa-shield-halved text-emerald-400 text-sm"></i>
+            <span>HIPAA-Aware Intake Ready</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <i class="fa-solid fa-bolt text-brand-gold text-sm"></i>
+            <span>Instant Lead Response (&lt;60s)</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <i class="fa-solid fa-repeat text-sky-400 text-sm"></i>
+            <span>Automated Patient Win-Backs</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero Interactive Layered Visual: Real Wellness Business in Action with Live AI Telemetry -->
+      <div class="mt-8 lg:mt-14 relative max-w-6xl mx-auto">
+        
+        <!-- Ambient decorative frame -->
+        <div class="relative rounded-3xl p-2 sm:p-4 bg-gradient-to-b from-white/15 via-white/5 to-transparent border border-white/10 shadow-2xl backdrop-blur-xl">
+          
+          <!-- Inner Mockup Container -->
+          <div class="relative rounded-2xl overflow-hidden bg-brand-dark-card border border-slate-800 shadow-inner">
+            
+            <!-- Window Bar -->
+            <div class="bg-slate-900/90 border-b border-slate-800 px-4 py-3 flex items-center justify-between">
+              <div class="flex items-center gap-2">
+                <span class="w-3 h-3 rounded-full bg-rose-500/80"></span>
+                <span class="w-3 h-3 rounded-full bg-amber-500/80"></span>
+                <span class="w-3 h-3 rounded-full bg-emerald-500/80"></span>
+                <span class="ml-2 text-xs font-mono text-slate-400 flex items-center gap-1.5">
+                  <i class="fa-solid fa-lock text-[10px] text-emerald-400"></i>
+                  https://app.healthybossesnetwork.com/growth-machine
+                </span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 flex items-center gap-1">
+                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                  AI LIVE: 24/7 AUTONOMOUS
+                </span>
+              </div>
+            </div>
+
+            <!-- Visual Content Grid: Cinematic Photography + Live Telemetry Overlay -->
+            <div class="relative grid grid-cols-1 lg:grid-cols-12 min-h-[460px]">
+              
+              <!-- Left 7 cols: Real Photography of Wellness Clinic / Spa Consultation -->
+              <div class="lg:col-span-7 relative min-h-[340px] lg:min-h-full overflow-hidden">
+                <img 
+                  src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1400&q=80" 
+                  alt="Modern wellness clinic consultation and care" 
+                  class="w-full h-full object-cover object-center filter brightness-90 contrast-105"
+                  onerror="this.src='https://placehold.co/900x600/0f172a/d4af37?text=Modern+Health+Practice';"
+                >
+                <div class="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-r from-brand-dark-card/90 via-brand-dark-card/40 to-transparent"></div>
+                
+                <!-- Floating Real-Time Booking Badge -->
+                <div class="absolute bottom-6 left-6 right-6 sm:right-auto sm:max-w-xs glass-panel p-4 rounded-2xl shadow-glass border border-amber-400/30 animate-float-slow">
+                  <div class="flex items-center justify-between mb-2">
+                    <span class="text-[10px] font-bold uppercase tracking-wider text-brand-gold-light flex items-center gap-1">
+                      <i class="fa-solid fa-circle-check text-emerald-400"></i> New Booking Confirmed
+                    </span>
+                    <span class="text-[10px] text-slate-400">Just now</span>
+                  </div>
+                  <p class="text-xs font-semibold text-white">Dr. Sarah Vance • Holistic Acupuncture</p>
+                  <p class="text-[11px] text-slate-300 mt-0.5">Comprehensive Intake + 60m Treatment</p>
+                  <div class="mt-2 pt-2 border-t border-white/10 flex items-center justify-between text-[10px] text-slate-400">
+                    <span>Acquisition: <strong class="text-emerald-400">SEO + AI Triage</strong></span>
+                    <span class="font-mono text-amber-300 font-bold">$280.00</span>
+                  </div>
+                </div>
+
+                <!-- Secondary floating badge: Active Practitioner Ticker -->
+                <div class="absolute top-6 left-6 glass-panel px-3.5 py-2 rounded-xl border border-white/10 hidden sm:flex items-center gap-2.5">
+                  <div class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></div>
+                  <span class="text-xs font-semibold text-white">Austin, TX Clinic • 14 Appointments Scheduled Today</span>
+                </div>
+              </div>
+
+              <!-- Right 5 cols: Live System Status / Pipeline Feed -->
+              <div class="lg:col-span-5 p-5 sm:p-6 bg-slate-950/90 flex flex-col justify-between border-t lg:border-t-0 lg:border-l border-slate-800">
+                
+                <!-- Header inside card -->
+                <div>
+                  <div class="flex items-center justify-between border-b border-slate-800 pb-3 mb-4">
+                    <div>
+                      <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400">Growth Telemetry</h4>
+                      <p class="text-sm font-bold text-white">Weekly Performance Engine</p>
+                    </div>
+                    <span class="text-xs font-mono text-emerald-400 bg-emerald-950/50 px-2 py-1 rounded border border-emerald-500/30">
+                      +248% MoM
+                    </span>
+                  </div>
+
+                  <!-- Live Activity Feed Items with Rich Visual Icons -->
+                  <div class="space-y-3">
+                    <!-- Item 1 -->
+                    <div class="p-3.5 rounded-xl bg-slate-900/90 border border-slate-800/80 hover:border-amber-400/40 transition-colors">
+                      <div class="flex items-center justify-between text-xs mb-1">
+                        <span class="font-semibold text-slate-200 flex items-center gap-2">
+                          <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+                          SMS Lead Nurture &amp; Booking
+                        </span>
+                        <span class="text-[10px] text-slate-400 font-mono">1m ago</span>
+                      </div>
+                      <p class="text-[11px] text-slate-300">
+                        AI Concierge answered private-pay rate inquiry &amp; booked 2:30 PM appointment.
+                      </p>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="p-3.5 rounded-xl bg-slate-900/90 border border-slate-800/80 hover:border-amber-400/40 transition-colors">
+                      <div class="flex items-center justify-between text-xs mb-1">
+                        <span class="font-semibold text-slate-200 flex items-center gap-2">
+                          <span class="w-2 h-2 rounded-full bg-amber-400"></span>
+                          Win-Back Workflow (Day 21)
+                        </span>
+                        <span class="text-[10px] text-slate-400 font-mono">14m ago</span>
+                      </div>
+                      <p class="text-[11px] text-slate-300">
+                        Triggered automated recall to 38 dormant wellness clients (12 rebooked).
+                      </p>
+                    </div>
+
+                    <!-- Item 3 -->
+                    <div class="p-3.5 rounded-xl bg-slate-900/90 border border-slate-800/80 hover:border-amber-400/40 transition-colors">
+                      <div class="flex items-center justify-between text-xs mb-1">
+                        <span class="font-semibold text-slate-200 flex items-center gap-2">
+                          <span class="w-2 h-2 rounded-full bg-sky-400"></span>
+                          5-Star Reputation Engine
+                        </span>
+                        <span class="text-[10px] text-slate-400 font-mono">35m ago</span>
+                      </div>
+                      <p class="text-[11px] text-slate-300">
+                        Post-appointment review SMS sent → 5.0 Google review logged automatically.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Bottom Metric Ticker -->
+                <div class="mt-4 pt-4 border-t border-slate-800/80 grid grid-cols-2 gap-3">
+                  <div class="p-3 rounded-xl bg-black/50 border border-white/5">
+                    <span class="text-[10px] uppercase font-bold text-slate-400">Lead Response</span>
+                    <p class="text-base font-extrabold text-brand-gold-light font-mono">38 seconds</p>
+                  </div>
+                  <div class="p-3 rounded-xl bg-black/50 border border-white/5">
+                    <span class="text-[10px] uppercase font-bold text-slate-400">Missed Call Recovery</span>
+                    <p class="text-base font-extrabold text-emerald-400 font-mono">94.2%</p>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Sound Familiar / The Fundamental Reality (Enhanced with Real Editorial Photography) -->
+  <section class="py-24 bg-slate-950/80 border-t border-b border-white/5 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="max-w-3xl mx-auto text-center mb-16">
+        <span class="text-xs font-bold uppercase tracking-widest text-brand-gold-light">The Fundamental Reality</span>
+        <h2 class="text-3xl sm:text-5xl font-extrabold text-white mt-3 font-serif">
+          You Were Trained to Be Great at Your Craft.
+          <span class="italic font-normal block text-slate-400">Nobody Trained You to Run the Machine.</span>
+        </h2>
+        <p class="mt-4 text-slate-300 text-base sm:text-lg leading-relaxed">
+          That is not a personal failure. It is an operational gap. You went into business to heal patients, transform physiques, elevate self-worth, or build your practice—not to spend nights fighting broken funnels, missed phone calls, and manual follow-ups.
+        </p>
+      </div>
+
+      <!-- Visual Side-by-Side Narrative: The Overwhelmed Practitioner vs. The Autonomous System -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-16 items-center">
+        <!-- Visual 1: Stressed manual front desk operations -->
+        <div class="lg:col-span-6 editorial-frame relative group">
+          <img 
+            src="https://images.unsplash.com/photo-1556740758-90de374c12ad?auto=format&fit=crop&w=1000&q=80" 
+            alt="Chaotic manual front desk reception and phone tag" 
+            class="w-full h-80 sm:h-96 object-cover filter brightness-[0.75] contrast-110 group-hover:scale-105 transition-transform duration-700"
+          >
+          <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+          <div class="absolute top-4 left-4 px-3 py-1 rounded-full bg-rose-500/20 text-rose-300 border border-rose-500/40 text-[11px] font-bold uppercase tracking-wider flex items-center gap-1.5">
+            <i class="fa-solid fa-triangle-exclamation"></i> The Broken Manual Way
+          </div>
+          <div class="absolute bottom-6 left-6 right-6">
+            <h4 class="text-xl font-bold text-white mb-1">Constant Phone Tag &amp; Missed Inquiries</h4>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              When a client calls while you're in session, they don't leave voicemails. They hang up and call the next business on Google Maps. Revenue leaks every single day.
+            </p>
+          </div>
+        </div>
+
+        <!-- Visual 2: Calm, automated practitioner with satisfied patient -->
+        <div class="lg:col-span-6 editorial-frame relative group">
+          <img 
+            src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1000&q=80" 
+            alt="Calm practitioner reviewing schedule with autonomous bookings" 
+            class="w-full h-80 sm:h-96 object-cover filter brightness-[0.85] contrast-105 group-hover:scale-105 transition-transform duration-700"
+          >
+          <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+          <div class="absolute top-4 left-4 px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 text-[11px] font-bold uppercase tracking-wider flex items-center gap-1.5">
+            <i class="fa-solid fa-check"></i> The HBN Autonomous Standard
+          </div>
+          <div class="absolute bottom-6 left-6 right-6">
+            <h4 class="text-xl font-bold text-white mb-1">Quiet Confidence &amp; Filled Calendars</h4>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              Inquiries are captured in under 60 seconds, pre-qualified, and booked right onto your calendar with reminders and automated intake forms completed before they arrive.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6 Gaps Grid: Editorial layout with stark contrast -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        <!-- Gap 1 -->
+        <div class="p-8 rounded-2xl bg-brand-dark-card border border-slate-800 hover:border-amber-500/30 transition-all duration-300 group">
+          <div class="w-12 h-12 rounded-xl bg-rose-500/10 text-rose-400 flex items-center justify-center text-xl mb-6 group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-door-open"></i>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">Patients Come Once &amp; Never Return</h3>
+          <p class="text-sm text-slate-400 leading-relaxed">
+            You can get people in the door with sheer grit, but nothing is installed behind the scenes to rebook them, check in at day 14, or turn one-time visits into recurring memberships.
+          </p>
+        </div>
+
+        <!-- Gap 2 -->
+        <div class="p-8 rounded-2xl bg-brand-dark-card border border-slate-800 hover:border-amber-500/30 transition-all duration-300 group">
+          <div class="w-12 h-12 rounded-xl bg-amber-500/10 text-brand-gold-light flex items-center justify-center text-xl mb-6 group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-phone-slash"></i>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">Missed Calls = Lost Thousands</h3>
+          <p class="text-sm text-slate-400 leading-relaxed">
+            While you are with a patient or leading a class, high-intent prospective clients call your front desk. They don't leave voicemails; they call the next clinic on Google Maps.
+          </p>
+        </div>
+
+        <!-- Gap 3 -->
+        <div class="p-8 rounded-2xl bg-brand-dark-card border border-slate-800 hover:border-amber-500/30 transition-all duration-300 group">
+          <div class="w-12 h-12 rounded-xl bg-sky-500/10 text-sky-400 flex items-center justify-center text-xl mb-6 group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-shuffle"></i>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">Marketing by Memory (Stop-and-Go)</h3>
+          <p class="text-sm text-slate-400 leading-relaxed">
+            Some weeks you post on Instagram and remember to email. Other weeks clinical workload explodes and marketing vanishes. Without a continuous engine, revenue rides a roller coaster.
+          </p>
+        </div>
+
+        <!-- Gap 4 -->
+        <div class="p-8 rounded-2xl bg-brand-dark-card border border-slate-800 hover:border-amber-500/30 transition-all duration-300 group">
+          <div class="w-12 h-12 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center text-xl mb-6 group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-layer-group"></i>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">Fragmented SaaS Tool Fatigue</h3>
+          <p class="text-sm text-slate-400 leading-relaxed">
+            Wordpress site, separate booking software, Mailchimp email, generic text widget, spreadsheet CRM. You pay 7 subscriptions that refuse to talk to each other.
+          </p>
+        </div>
+
+        <!-- Gap 5 -->
+        <div class="p-8 rounded-2xl bg-brand-dark-card border border-slate-800 hover:border-amber-500/30 transition-all duration-300 group">
+          <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-xl mb-6 group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-heart-pulse"></i>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">Hospitality Left to Chance</h3>
+          <p class="text-sm text-slate-400 leading-relaxed">
+            Intake paperwork is friction-heavy. Review requests are forgotten. Referral incentives don't exist. The customer experience isn't designed as a deliberate asset.
+          </p>
+        </div>
+
+        <!-- Gap 6 -->
+        <div class="p-8 rounded-2xl bg-brand-dark-card border border-slate-800 hover:border-amber-500/30 transition-all duration-300 group">
+          <div class="w-12 h-12 rounded-xl bg-yellow-500/10 text-yellow-400 flex items-center justify-center text-xl mb-6 group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-user-lock"></i>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">The Business Cannot Run Without You</h3>
+          <p class="text-sm text-slate-400 leading-relaxed">
+            If you take a 10-day vacation, inquiries stall, follow-ups freeze, and revenue halts. You didn't build a scalable business; you built an exhausting job.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Transition Banner -->
+      <div class="mt-14 p-6 sm:p-8 rounded-2xl bg-gradient-to-r from-amber-500/10 via-brand-dark-card to-emerald-500/10 border border-brand-gold/30 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div class="flex items-center gap-4">
+          <div class="w-12 h-12 rounded-full bg-brand-gold/20 text-brand-gold flex items-center justify-center text-xl font-serif">
+            HBN
+          </div>
+          <div>
+            <h4 class="text-base sm:text-lg font-bold text-white">This is the exact gap Healthy Bosses Network closes.</h4>
+            <p class="text-xs sm:text-sm text-slate-300">We install the autonomous marketing, intake, AI, and retention infrastructure while you focus on client care.</p>
+          </div>
+        </div>
+        <button onclick="openAuditModal()" class="flex-shrink-0 px-6 py-3 rounded-xl bg-brand-gold hover:bg-brand-gold-light text-brand-dark font-extrabold text-xs uppercase tracking-wider transition-all">
+          Audit My Business Gaps
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Comprehensive Visual Services Gallery (New Major Visual Improvement) -->
+  <section class="py-24 bg-brand-dark relative noise-bg border-b border-white/5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="max-w-3xl mx-auto text-center mb-16">
+        <span class="text-xs font-bold uppercase tracking-widest text-brand-gold-light">Complete Autonomous Infrastructure</span>
+        <h2 class="text-3xl sm:text-5xl font-extrabold text-white mt-3 font-serif">
+          Every Service Visually Installed.
+          <span class="italic font-normal block text-slate-400">Engineered Specifically For Health Businesses.</span>
+        </h2>
+        <p class="mt-4 text-slate-300 text-base leading-relaxed">
+          From high-converting web architecture to 24/7 AI employee triage, local SEO dominance, and creative operations—here is how HBN transforms your daily practice.
+        </p>
+      </div>
+
+      <!-- Feature 1: Website Design + Branding (Editorial Layout) -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center mb-20">
+        <div class="lg:col-span-7 editorial-frame relative group">
+          <img 
+            src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1200&q=80" 
+            alt="High-end wellness clinic interior and design" 
+            class="w-full h-[400px] object-cover group-hover:scale-105 transition-transform duration-700"
+          >
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/30 to-transparent"></div>
+          <div class="absolute bottom-6 left-6 right-6 glass-panel p-4 rounded-xl border border-white/10">
+            <div class="flex items-center justify-between text-xs">
+              <span class="font-bold text-brand-gold-light uppercase tracking-wider flex items-center gap-1.5">
+                <i class="fa-solid fa-laptop-code text-brand-gold"></i> Custom 2026 Website Standard
+              </span>
+              <span class="text-emerald-400 font-mono font-bold">98/100 PageSpeed</span>
+            </div>
+            <p class="text-xs text-slate-300 mt-1">Mobile-first booking pathways, HIPAA-aware intake forms, and luxury typography.</p>
+          </div>
+        </div>
+        <div class="lg:col-span-5 space-y-4">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-400/10 text-brand-gold border border-brand-gold/30 text-xs font-bold uppercase">
+            Pillar 01 • Digital Flagship
+          </div>
+          <h3 class="text-2xl sm:text-3xl font-extrabold text-white">Bespoke Website Design &amp; Brand Elevation</h3>
+          <p class="text-sm text-slate-300 leading-relaxed">
+            Your website should not be a static brochure. We build bespoke digital flagships designed specifically to guide anxious or curious visitors directly into scheduled treatments and consultations.
+          </p>
+          <ul class="space-y-2 text-xs text-slate-300 pt-2">
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-gold"></i> Sub-second mobile loading speeds that prevent bounce rates</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-gold"></i> Built-in calendar scheduling synced directly with your EHR / booking tool</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-gold"></i> Authority brand storytelling that justifies premium private-pay rates</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Feature 2: Lead Gen & Hyper-Targeted Ads (Meta + Google) -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center mb-20">
+        <div class="lg:col-span-5 space-y-4 order-2 lg:order-1">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-500/10 text-rose-400 border border-rose-500/30 text-xs font-bold uppercase">
+            Pillar 02 • High-Intent Traffic
+          </div>
+          <h3 class="text-2xl sm:text-3xl font-extrabold text-white">Targeted Ads &amp; Local Lead Generation</h3>
+          <p class="text-sm text-slate-300 leading-relaxed">
+            Stop wasting budget boosting generic social posts. We run precision Meta and Google Ad campaigns targeting clients in your exact zip codes who are actively searching for relief, treatments, or fitness programs.
+          </p>
+          <ul class="space-y-2 text-xs text-slate-300 pt-2">
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-rose-400"></i> Hyper-local geo-fencing within 5 to 15 miles of your clinic</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-rose-400"></i> High-converting offer packaging (Introductory passes, consultations)</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-rose-400"></i> Server-side CAPI tracking ensuring compliant attribution</li>
+          </ul>
+        </div>
+        <div class="lg:col-span-7 editorial-frame relative group order-1 lg:order-2">
+          <img 
+            src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1200&q=80" 
+            alt="Fitness studio and movement client training" 
+            class="w-full h-[400px] object-cover group-hover:scale-105 transition-transform duration-700"
+          >
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/30 to-transparent"></div>
+          <div class="absolute bottom-6 left-6 right-6 glass-panel p-4 rounded-xl border border-white/10">
+            <div class="flex items-center justify-between text-xs">
+              <span class="font-bold text-rose-400 uppercase tracking-wider flex items-center gap-1.5">
+                <i class="fa-solid fa-bullseye text-rose-400"></i> Hyper-Targeted Local Ad Engine
+              </span>
+              <span class="text-brand-gold-light font-mono font-bold">$18.40 CAC Average</span>
+            </div>
+            <p class="text-xs text-slate-300 mt-1">High-intent Google search capture + retargeting video ads on Instagram.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Feature 3: SEO Dominance & Google 3-Pack Reputation -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center mb-20">
+        <div class="lg:col-span-7 editorial-frame relative group">
+          <img 
+            src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1200&q=80" 
+            alt="Modern chiropractic and medical care consultation" 
+            class="w-full h-[400px] object-cover group-hover:scale-105 transition-transform duration-700"
+          >
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/30 to-transparent"></div>
+          <div class="absolute bottom-6 left-6 right-6 glass-panel p-4 rounded-xl border border-white/10">
+            <div class="flex items-center justify-between text-xs">
+              <span class="font-bold text-emerald-400 uppercase tracking-wider flex items-center gap-1.5">
+                <i class="fa-solid fa-location-dot text-emerald-400"></i> Google Maps 3-Pack Authority
+              </span>
+              <span class="text-white font-mono font-bold">4.9 ★ (218 Reviews)</span>
+            </div>
+            <p class="text-xs text-slate-300 mt-1">Automated post-treatment review invites + organic local search syndication.</p>
+          </div>
+        </div>
+        <div class="lg:col-span-5 space-y-4">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 text-xs font-bold uppercase">
+            Pillar 03 • Local Dominance
+          </div>
+          <h3 class="text-2xl sm:text-3xl font-extrabold text-white">Local SEO &amp; Automated 5-Star Reviews</h3>
+          <p class="text-sm text-slate-300 leading-relaxed">
+            When someone in your town searches "best physical therapist near me" or "lymphatic drainage spa", your business must appear at the top. We optimize your Google Business Profile and automate review requests so your reputation compounds every week.
+          </p>
+          <ul class="space-y-2 text-xs text-slate-300 pt-2">
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Google Map Pack #1-3 ranking acceleration</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Automated post-visit SMS asking for 5-star Google feedback</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Local citation management across 70+ healthcare directories</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Feature 4: Unified Health CRM & Win-Back Automation -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <div class="lg:col-span-5 space-y-4 order-2 lg:order-1">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-500/10 text-sky-400 border border-sky-500/30 text-xs font-bold uppercase">
+            Pillar 04 • Lifetime Patient Value
+          </div>
+          <h3 class="text-2xl sm:text-3xl font-extrabold text-white">Centralized CRM &amp; Win-Back Retention</h3>
+          <p class="text-sm text-slate-300 leading-relaxed">
+            True practice profitability comes from repeat clients and patient lifetime value. Our system automatically follows up on days 14, 30, and 60 with personalized recall workflows that bring dormant clients right back onto your schedule.
+          </p>
+          <ul class="space-y-2 text-xs text-slate-300 pt-2">
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-sky-400"></i> All inquiries (Calls, Texts, DMs, Web forms) in one unified dashboard</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-sky-400"></i> Automated treatment recall texts that fill open mid-week slots</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-sky-400"></i> Membership retention alerts notifying staff before a client cancels</li>
+          </ul>
+        </div>
+        <div class="lg:col-span-7 editorial-frame relative group order-1 lg:order-2">
+          <img 
+            src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80" 
+            alt="Luxury spa hospitality and patient retention" 
+            class="w-full h-[400px] object-cover group-hover:scale-105 transition-transform duration-700"
+          >
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/30 to-transparent"></div>
+          <div class="absolute bottom-6 left-6 right-6 glass-panel p-4 rounded-xl border border-white/10">
+            <div class="flex items-center justify-between text-xs">
+              <span class="font-bold text-sky-400 uppercase tracking-wider flex items-center gap-1.5">
+                <i class="fa-solid fa-repeat text-sky-400"></i> Automated Patient Win-Back Engine
+              </span>
+              <span class="text-emerald-400 font-mono font-bold">+42% Rebooking Rate</span>
+            </div>
+            <p class="text-xs text-slate-300 mt-1">Dormant patient reactivations sent without any manual administrative burden.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- AI Employee Centerpiece Section -->
+  <section id="ai-employee" class="py-24 relative overflow-hidden bg-gradient-to-b from-brand-dark via-slate-950 to-brand-dark">
+    <!-- Subtle glow accents -->
+    <div class="absolute top-1/4 -left-40 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute bottom-10 right-0 w-80 h-80 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <!-- Section Header -->
+      <div class="max-w-3xl mx-auto text-center mb-16">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 text-xs font-bold uppercase tracking-wider mb-4">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+          Autonomous Centerpiece
+        </div>
+        <h2 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
+          Meet Your 24/7 <span class="emerald-gradient-text font-serif italic font-normal">AI Employee</span>.
+        </h2>
+        <p class="mt-4 text-slate-300 text-base sm:text-lg leading-relaxed">
+          Not a robotic chatbot that gives canned answers. An intelligent, brand-trained receptionist and growth concierge that talks like a thoughtful team member, triages clinical questions, qualifies buyers, and locks appointments onto your calendar.
+        </p>
+      </div>
+
+      <!-- Dual Column Layout: Left feature cards, Right Interactive AI Chat Simulator -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        
+        <!-- Left: Capabilities Column (5 cols) -->
+        <div class="lg:col-span-5 space-y-6">
+          
+          <!-- Capability 1 -->
+          <div class="p-6 rounded-2xl glass-panel border border-slate-800 hover:border-emerald-500/40 transition-all">
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-lg flex-shrink-0">
+                <i class="fa-solid fa-comments"></i>
+              </div>
+              <div>
+                <h3 class="text-base font-bold text-white">Instant Omnichannel Triage</h3>
+                <p class="text-xs text-slate-300 mt-1 leading-relaxed">
+                  Engages visitors across Web Chat, SMS text messaging, Instagram DMs, and Google Business Profile in under 10 seconds.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Capability 2 -->
+          <div class="p-6 rounded-2xl glass-panel border border-slate-800 hover:border-emerald-500/40 transition-all">
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-xl bg-amber-500/20 text-brand-gold-light flex items-center justify-center text-lg flex-shrink-0">
+                <i class="fa-solid fa-calendar-check"></i>
+              </div>
+              <div>
+                <h3 class="text-base font-bold text-white">Direct Calendar &amp; Intake Booking</h3>
+                <p class="text-xs text-slate-300 mt-1 leading-relaxed">
+                  Checks your real-time availability, verifies patient qualifications, and locks down the appointment with automatic calendar invites.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Capability 3 -->
+          <div class="p-6 rounded-2xl glass-panel border border-slate-800 hover:border-emerald-500/40 transition-all">
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-xl bg-sky-500/20 text-sky-400 flex items-center justify-center text-lg flex-shrink-0">
+                <i class="fa-solid fa-lock"></i>
+              </div>
+              <div>
+                <h3 class="text-base font-bold text-white">HIPAA-Aware Protocol Guardrails</h3>
+                <p class="text-xs text-slate-300 mt-1 leading-relaxed">
+                  Engineered specifically for health practitioners, therapists, and med spas with strict data boundary protections and safe routing.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Capability 4 -->
+          <div class="p-6 rounded-2xl glass-panel border border-slate-800 hover:border-emerald-500/40 transition-all">
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-xl bg-purple-500/20 text-purple-400 flex items-center justify-center text-lg flex-shrink-0">
+                <i class="fa-solid fa-phone-volume"></i>
+              </div>
+              <div>
+                <h3 class="text-base font-bold text-white">Missed Call Text-Back Concierge</h3>
+                <p class="text-xs text-slate-300 mt-1 leading-relaxed">
+                  If someone calls while you are working with a client, the AI instantly sends a warm SMS text: <em>"Hi, this is Aria with the clinic! I'm assisting a patient—how can I help you book today?"</em>
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right: Living Interactive AI Simulator (7 cols) -->
+        <div class="lg:col-span-7">
+          <div class="relative rounded-3xl p-1 bg-gradient-to-b from-emerald-500/30 via-slate-800 to-amber-500/20 shadow-2xl">
+            <div class="rounded-[22px] bg-slate-950 border border-slate-800 overflow-hidden flex flex-col h-[560px]">
+              
+              <!-- Chat Header -->
+              <div class="bg-slate-900 px-5 py-4 border-b border-slate-800 flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                  <div class="relative">
+                    <div class="w-10 h-10 rounded-full bg-gradient-to-br from-amber-400 to-emerald-600 p-0.5">
+                      <div class="w-full h-full rounded-full bg-slate-900 flex items-center justify-center">
+                        <i class="fa-solid fa-sparkles text-brand-gold text-sm"></i>
+                      </div>
+                    </div>
+                    <span class="absolute bottom-0 right-0 w-3 h-3 rounded-full bg-emerald-500 border-2 border-slate-900"></span>
+                  </div>
+                  <div>
+                    <div class="flex items-center gap-2">
+                      <h4 class="text-sm font-bold text-white">Aria • HBN AI Concierge</h4>
+                      <span class="text-[10px] bg-emerald-500/20 text-emerald-400 px-1.5 py-0.5 rounded font-mono font-medium">Online</span>
+                    </div>
+                    <p class="text-[11px] text-slate-400">Trained for Wellness, Med Spas &amp; Health Practices</p>
+                  </div>
+                </div>
+                <button onclick="resetChat()" class="text-xs text-slate-400 hover:text-white transition-colors flex items-center gap-1" title="Reset Simulation">
+                  <i class="fa-solid fa-arrow-rotate-left"></i> Reset Demo
+                </button>
+              </div>
+
+              <!-- Interactive Prompt Chips -->
+              <div class="bg-slate-900/40 border-b border-slate-800/80 px-4 py-2.5 flex items-center gap-2 overflow-x-auto text-xs whitespace-nowrap">
+                <span class="text-slate-400 text-[11px] flex-shrink-0"><i class="fa-regular fa-hand-pointer mr-1"></i> Try asking:</span>
+                <button onclick="sendQuickPrompt('Do you accept insurance for acupuncture or therapy?')" class="px-2.5 py-1 rounded-full bg-slate-800 hover:bg-slate-700 text-slate-200 text-[11px] transition-colors border border-slate-700">
+                  Insurance acceptance?
+                </button>
+                <button onclick="sendQuickPrompt('I want to book an initial wellness consultation.')" class="px-2.5 py-1 rounded-full bg-slate-800 hover:bg-slate-700 text-slate-200 text-[11px] transition-colors border border-slate-700">
+                  Book consultation
+                </button>
+                <button onclick="sendQuickPrompt('What are your monthly membership package rates?')" class="px-2.5 py-1 rounded-full bg-slate-800 hover:bg-slate-700 text-slate-200 text-[11px] transition-colors border border-slate-700">
+                  Membership rates?
+                </button>
+                <button onclick="sendQuickPrompt('How does this handle after-hours inquiries?')" class="px-2.5 py-1 rounded-full bg-slate-800 hover:bg-slate-700 text-slate-200 text-[11px] transition-colors border border-slate-700">
+                  After-hours flow
+                </button>
+              </div>
+
+              <!-- Chat Message Scroll Area -->
+              <div id="chatMessages" class="flex-1 p-5 overflow-y-auto space-y-4 font-sans text-sm">
+                
+                <!-- Initial Bot Message -->
+                <div class="flex items-start gap-3">
+                  <div class="w-7 h-7 rounded-full bg-brand-gold/20 text-brand-gold flex items-center justify-center text-xs flex-shrink-0 mt-0.5">
+                    <i class="fa-solid fa-leaf"></i>
+                  </div>
+                  <div class="bg-slate-900 border border-slate-800 p-3.5 rounded-2xl rounded-tl-sm text-slate-200 text-xs sm:text-sm max-w-[85%] leading-relaxed shadow-sm">
+                    <p>Healthy Day! 💛 Welcome to the demo practice. I'm Aria, your 24/7 AI Growth Concierge.</p>
+                    <p class="mt-2">I answer questions, triage patient intake, verify service fit, and book appointments directly onto the clinician's calendar. What questions can I answer for you today?</p>
+                  </div>
+                </div>
+
+              </div>
+
+              <!-- Chat Input Bar -->
+              <div class="p-3 bg-slate-900 border-t border-slate-800">
+                <form id="chatForm" onsubmit="handleUserChatSubmit(event)" class="flex items-center gap-2">
+                  <input 
+                    type="text" 
+                    id="chatInput" 
+                    placeholder="Type a clinical, booking, or pricing question..." 
+                    class="flex-1 bg-slate-950 border border-slate-700 rounded-xl px-4 py-2.5 text-xs sm:text-sm text-white placeholder-slate-500 focus:outline-none focus:border-brand-gold transition-colors"
+                  >
+                  <button type="submit" class="px-4 py-2.5 rounded-xl bg-brand-gold hover:bg-brand-gold-light text-brand-dark font-bold text-xs uppercase tracking-wider transition-all flex items-center gap-1.5 flex-shrink-0">
+                    <span>Send</span>
+                    <i class="fa-solid fa-paper-plane text-[10px]"></i>
+                  </button>
+                </form>
+                <div class="flex items-center justify-between mt-2 px-1 text-[10px] text-slate-500 font-mono">
+                  <span><i class="fa-solid fa-shield-halved text-emerald-400"></i> Encrypted HIPAA Pipeline</span>
+                  <span>Average response time: 0.8s</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <section id="growth-machine" class="py-24 bg-slate-950 relative border-t border-b border-white/5 noise-bg">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="max-w-3xl mx-auto text-center mb-16">
+        <span class="text-xs font-bold uppercase tracking-widest text-brand-gold-light">The Architecture of Scale</span>
+        <h2 class="text-3xl sm:text-5xl font-extrabold text-white mt-2">
+          The <span class="gold-gradient-text font-serif italic font-normal">Boss Growth Machine</span>.
+        </h2>
+        <p class="mt-4 text-slate-300 text-base sm:text-lg leading-relaxed">
+          Not fragmented tools you have to stitch together. We install Website + CRM + AI + SEO + Ads + Booking + Reputation + Automation as <strong>one continuous operating system</strong>.
+        </p>
+      </div>
+
+      <!-- Interactive Machine Hub: Clickable Modules with Dynamic Inspector -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        
+        <!-- Left: 8 Connected System Modules Grid (7 cols) -->
+        <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4" id="machineModulesContainer">
+          
+          <!-- Module 1: Website Growth Engine -->
+          <div onclick="selectModule(0)" id="mod-btn-0" class="cursor-pointer p-5 rounded-2xl bg-brand-dark-card border-2 border-brand-gold shadow-glow-gold transition-all duration-200 group">
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-[10px] font-mono font-bold text-brand-gold uppercase tracking-wider">Pillar 01</span>
+              <span class="w-2.5 h-2.5 rounded-full bg-emerald-400"></span>
+            </div>
+            <h3 class="text-base font-bold text-white group-hover:text-brand-gold-light transition-colors">High-Converting Website</h3>
+            <p class="text-xs text-slate-400 mt-1 line-clamp-2">Speed-optimized, mobile-first patient conversion architecture with clear service pathways.</p>
+          </div>
+
+          <!-- Module 2: AI Employee & Triage -->
+          <div onclick="selectModule(1)" id="mod-btn-1" class="cursor-pointer p-5 rounded-2xl bg-brand-dark-card border border-slate-800 hover:border-slate-600 transition-all duration-200 group">
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-[10px] font-mono font-bold text-emerald-400 uppercase tracking-wider">Pillar 02</span>
+              <span class="w-2.5 h-2.5 rounded-full bg-emerald-400"></span>
+            </div>
+            <h3 class="text-base font-bold text-white group-hover:text-brand-gold-light transition-colors">24/7 AI Employee</h3>
+            <p class="text-xs text-slate-400 mt-1 line-clamp-2">Autonomous voice and text concierge for instant qualification, FAQ routing, and booking.</p>
+          </div>
+
+          <!-- Module 3: Centralized CRM & Pipeline -->
+          <div onclick="selectModule(2)" id="mod-btn-2" class="cursor-pointer p-5 rounded-2xl bg-brand-dark-card border border-slate-800 hover:border-slate-600 transition-all duration-200 group">
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-[10px] font-mono font-bold text-sky-400 uppercase tracking-wider">Pillar 03</span>
+              <span class="w-2.5 h-2.5 rounded-full bg-emerald-400"></span>
+            </div>
+            <h3 class="text-base font-bold text-white group-hover:text-brand-gold-light transition-colors">Centralized Health CRM</h3>
+            <p class="text-xs text-slate-400 mt-1 line-clamp-2">One visual pipeline for every phone lead, web inquiry, direct referral, and booking.</p>
+          </div>
+
+          <!-- Module 4: Local SEO & Google Authority -->
+          <div onclick="selectModule(3)" id="mod-btn-3" class="cursor-pointer p-5 rounded-2xl bg-brand-dark-card border border-slate-800 hover:border-slate-600 transition-all duration-200 group">
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-[10px] font-mono font-bold text-amber-400 uppercase tracking-wider">Pillar 04</span>
+              <span class="w-2.5 h-2.5 rounded-full bg-emerald-400"></span>
+            </div>
+            <h3 class="text-base font-bold text-white group-hover:text-brand-gold-light transition-colors">Local SEO &amp; Maps Dominance</h3>
+            <p class="text-xs text-slate-400 mt-1 line-clamp-2">Targeted search foundation and Google Business optimization to dominate local search.</p>
+          </div>
+
+          <!-- Module 5: Targeted Ad Funnels -->
+          <div onclick="selectModule(4)" id="mod-btn-4" class="cursor-pointer p-5 rounded-2xl bg-brand-dark-card border border-slate-800 hover:border-slate-600 transition-all duration-200 group">
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-[10px] font-mono font-bold text-rose-400 uppercase tracking-wider">Pillar 05</span>
+              <span class="w-2.5 h-2.5 rounded-full bg-emerald-400"></span>
+            </div>
+            <h3 class="text-base font-bold text-white group-hover:text-brand-gold-light transition-colors">Targeted Ads &amp; Retargeting</h3>
+            <p class="text-xs text-slate-400 mt-1 line-clamp-2">Hyper-targeted Meta and Google ads delivering high-intent clients directly into your funnel.</p>
+          </div>
+
+          <!-- Module 6: Frictionless Booking & Intake -->
+          <div onclick="selectModule(5)" id="mod-btn-5" class="cursor-pointer p-5 rounded-2xl bg-brand-dark-card border border-slate-800 hover:border-slate-600 transition-all duration-200 group">
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-[10px] font-mono font-bold text-purple-400 uppercase tracking-wider">Pillar 06</span>
+              <span class="w-2.5 h-2.5 rounded-full bg-emerald-400"></span>
+            </div>
+            <h3 class="text-base font-bold text-white group-hover:text-brand-gold-light transition-colors">Frictionless Intake &amp; Booking</h3>
+            <p class="text-xs text-slate-400 mt-1 line-clamp-2">No phone tag. Digital intake, automated reminder sequences, and calendar sync.</p>
+          </div>
+
+          <!-- Module 7: 5-Star Reputation Machine -->
+          <div onclick="selectModule(6)" id="mod-btn-6" class="cursor-pointer p-5 rounded-2xl bg-brand-dark-card border border-slate-800 hover:border-slate-600 transition-all duration-200 group">
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-[10px] font-mono font-bold text-yellow-400 uppercase tracking-wider">Pillar 07</span>
+              <span class="w-2.5 h-2.5 rounded-full bg-emerald-400"></span>
+            </div>
+            <h3 class="text-base font-bold text-white group-hover:text-brand-gold-light transition-colors">5-Star Reputation Engine</h3>
+            <p class="text-xs text-slate-400 mt-1 line-clamp-2">Automatic post-treatment review triggers that systematically compound Google 5-star ratings.</p>
+          </div>
+
+          <!-- Module 8: Retention & Win-Back Automation -->
+          <div onclick="selectModule(7)" id="mod-btn-7" class="cursor-pointer p-5 rounded-2xl bg-brand-dark-card border border-slate-800 hover:border-slate-600 transition-all duration-200 group">
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-[10px] font-mono font-bold text-emerald-400 uppercase tracking-wider">Pillar 08</span>
+              <span class="w-2.5 h-2.5 rounded-full bg-emerald-400"></span>
+            </div>
+            <h3 class="text-base font-bold text-white group-hover:text-brand-gold-light transition-colors">Retention &amp; Win-Backs</h3>
+            <p class="text-xs text-slate-400 mt-1 line-clamp-2">Automated rebooking workflows, membership renewals, and VIP patient nurturing.</p>
+          </div>
+
+        </div>
+
+        <!-- Right: Dynamic System Inspector Window (5 cols) -->
+        <div class="lg:col-span-5 sticky top-28">
+          <div class="rounded-3xl p-1 bg-gradient-to-b from-brand-gold/30 via-slate-800 to-transparent">
+            <div class="rounded-[22px] bg-slate-900 border border-slate-800 p-6 sm:p-7 flex flex-col justify-between min-h-[490px]">
+              
+              <!-- Inspector Content Dynamic Container with Image -->
+              <div id="inspectorContent">
+                <!-- Dynamically filled by selectModule(index) in JS -->
+              </div>
+
+              <!-- Bottom System Status Ticker -->
+              <div class="mt-6 pt-5 border-t border-slate-800 flex items-center justify-between text-xs">
+                <span class="text-slate-400 flex items-center gap-1.5">
+                  <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                  Connected Live System
+                </span>
+                <button onclick="openAuditModal()" class="text-brand-gold hover:text-white font-bold underline underline-offset-4">
+                  Test This For Your Business →
+                </button>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <section id="industries" class="py-24 bg-brand-dark relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Heading -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-16">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-widest text-brand-gold-light">Specialized by Trade</span>
+          <h2 class="text-3xl sm:text-5xl font-extrabold text-white mt-2">
+            Built for Businesses That <br class="hidden sm:inline">
+            <span class="gold-gradient-text font-serif italic font-normal">Serve Everyday Health</span>.
+          </h2>
+        </div>
+        <p class="mt-4 md:mt-0 text-slate-400 max-w-md text-sm leading-relaxed">
+          We don't do crypto, tech startups, or e-commerce dropshipping. We strictly partner with businesses that make people physically, mentally, and aesthetically healthier.
+        </p>
+      </div>
+
+      <!-- Industries Grid (6 Featured Verticals with authentic photography) -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- Industry 1: Beauty Salons, Spas & Esthetics -->
+        <div class="rounded-3xl overflow-hidden glass-panel border border-slate-800 group glass-card-hover flex flex-col justify-between">
+          <div class="relative h-56 overflow-hidden">
+            <img 
+              src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=800&q=80" 
+              alt="Luxury Day Spa and Wellness Massage" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              onerror="this.src='https://placehold.co/800x500/0f172a/d4af37?text=Luxury+Spas+%26+Esthetics';"
+            >
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-dark-card via-transparent to-transparent"></div>
+            <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-slate-950/80 backdrop-blur-md text-[11px] font-bold text-brand-gold border border-brand-gold/30">
+              Spas &amp; Aesthetics
+            </span>
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class="text-xl font-bold text-white group-hover:text-brand-gold-light transition-colors">Beauty Salons, Spas &amp; Med Spas</h3>
+              <p class="text-xs text-slate-300 mt-2 leading-relaxed">
+                Fill the chair with recurring clients. We build the high-touch booking flow, VIP membership nurture, and automated follow-up that keeps calendars packed without living in your Instagram DMs.
+              </p>
+              <ul class="mt-4 space-y-1.5 text-xs text-slate-400">
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400 text-[10px]"></i> Treatment rebooking automation at day 21</li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400 text-[10px]"></i> VIP packages &amp; seasonal service promotions</li>
+              </ul>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-800 flex items-center justify-between text-xs">
+              <span class="text-slate-400">Average uplift: <strong class="text-emerald-400">+48% repeat visits</strong></span>
+              <button onclick="openAuditModal()" class="text-brand-gold font-bold hover:text-white">View System →</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Industry 2: Mental Health Practices & Clinics -->
+        <div class="rounded-3xl overflow-hidden glass-panel border border-slate-800 group glass-card-hover flex flex-col justify-between">
+          <div class="relative h-56 overflow-hidden">
+            <img 
+              src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80" 
+              alt="Mental Health Therapy Session and Care" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              onerror="this.src='https://placehold.co/800x500/0f172a/d4af37?text=Mental+Health+Practices';"
+            >
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-dark-card via-transparent to-transparent"></div>
+            <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-slate-950/80 backdrop-blur-md text-[11px] font-bold text-sky-400 border border-sky-400/30">
+              Therapy &amp; Psychology
+            </span>
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class="text-xl font-bold text-white group-hover:text-brand-gold-light transition-colors">Mental Health &amp; Therapy Clinics</h3>
+              <p class="text-xs text-slate-300 mt-2 leading-relaxed">
+                Turn vulnerable searches into scheduled consultations. We build warm, trust-first websites with HIPAA-aware intake routing, automated waitlists, and condition-specific SEO (trauma, anxiety, family).
+              </p>
+              <ul class="mt-4 space-y-1.5 text-xs text-slate-400">
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400 text-[10px]"></i> Zero phone tag for prospective patients</li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400 text-[10px]"></i> Clear private-pay vs insurance triage</li>
+              </ul>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-800 flex items-center justify-between text-xs">
+              <span class="text-slate-400">Average intake: <strong class="text-emerald-400">&lt;2h consultation wait</strong></span>
+              <button onclick="openAuditModal()" class="text-brand-gold font-bold hover:text-white">View System →</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Industry 3: Fitness Studios, Gyms & Movement Coaches -->
+        <div class="rounded-3xl overflow-hidden glass-panel border border-slate-800 group glass-card-hover flex flex-col justify-between">
+          <div class="relative h-56 overflow-hidden">
+            <img 
+              src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=800&q=80" 
+              alt="Modern Fitness Training Facility" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              onerror="this.src='https://placehold.co/800x500/0f172a/d4af37?text=Fitness+Studios+%26+Gyms';"
+            >
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-dark-card via-transparent to-transparent"></div>
+            <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-slate-950/80 backdrop-blur-md text-[11px] font-bold text-amber-400 border border-amber-400/30">
+              Fitness &amp; Movement
+            </span>
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class="text-xl font-bold text-white group-hover:text-brand-gold-light transition-colors">Fitness Studios, Gyms &amp; Coaches</h3>
+              <p class="text-xs text-slate-300 mt-2 leading-relaxed">
+                Turn casual foot traffic and social followers into recurring paid members who stay. Fast lead-response funnels, trial class automations, and churn-prevention alert workflows.
+              </p>
+              <ul class="mt-4 space-y-1.5 text-xs text-slate-400">
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400 text-[10px]"></i> 7-day trial to auto-converting membership flow</li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400 text-[10px]"></i> Automated member re-engagement triggers</li>
+              </ul>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-800 flex items-center justify-between text-xs">
+              <span class="text-slate-400">Member retention: <strong class="text-emerald-400">+3.4 months LTV</strong></span>
+              <button onclick="openAuditModal()" class="text-brand-gold font-bold hover:text-white">View System →</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Industry 4: Medical Clinics, Dentists & Chiro -->
+        <div class="rounded-3xl overflow-hidden glass-panel border border-slate-800 group glass-card-hover flex flex-col justify-between">
+          <div class="relative h-56 overflow-hidden">
+            <img 
+              src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=800&q=80" 
+              alt="Medical and Chiropractic Clinic Care" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              onerror="this.src='https://placehold.co/800x500/0f172a/d4af37?text=Medical+Clinics';"
+            >
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-dark-card via-transparent to-transparent"></div>
+            <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-slate-950/80 backdrop-blur-md text-[11px] font-bold text-emerald-400 border border-emerald-400/30">
+              Medical &amp; Chiropractic
+            </span>
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class="text-xl font-bold text-white group-hover:text-brand-gold-light transition-colors">Medical Clinics, Dentists &amp; Chiro</h3>
+              <p class="text-xs text-slate-300 mt-2 leading-relaxed">
+                Relieve overwhelmed front desks. Online appointment requests, Google Maps 3-pack domination, automated patient recall workflows, and instant routine FAQ answering.
+              </p>
+              <ul class="mt-4 space-y-1.5 text-xs text-slate-400">
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400 text-[10px]"></i> Automated 6-month checkup recalls</li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400 text-[10px]"></i> 5-star Google review acceleration</li>
+              </ul>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-800 flex items-center justify-between text-xs">
+              <span class="text-slate-400">Front desk load: <strong class="text-emerald-400">-62% phone tag</strong></span>
+              <button onclick="openAuditModal()" class="text-brand-gold font-bold hover:text-white">View System →</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Industry 5: Holistic & Integrative Health -->
+        <div class="rounded-3xl overflow-hidden glass-panel border border-slate-800 group glass-card-hover flex flex-col justify-between">
+          <div class="relative h-56 overflow-hidden">
+            <img 
+              src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=800&q=80" 
+              alt="Holistic Health and Yoga Lifestyle" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              onerror="this.src='https://placehold.co/800x500/0f172a/d4af37?text=Holistic+Health';"
+            >
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-dark-card via-transparent to-transparent"></div>
+            <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-slate-950/80 backdrop-blur-md text-[11px] font-bold text-purple-400 border border-purple-400/30">
+              Integrative &amp; Holistic
+            </span>
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class="text-xl font-bold text-white group-hover:text-brand-gold-light transition-colors">Integrative, IV &amp; Holistic Medicine</h3>
+              <p class="text-xs text-slate-300 mt-2 leading-relaxed">
+                Educate skeptical patients into confident, committed buyers. We package complex holistic modalities into clear, premium offers with structured follow-up sequences.
+              </p>
+              <ul class="mt-4 space-y-1.5 text-xs text-slate-400">
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400 text-[10px]"></i> High-ticket package value stacking</li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400 text-[10px]"></i> Drip education sequences on gut/hormone health</li>
+              </ul>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-800 flex items-center justify-between text-xs">
+              <span class="text-slate-400">Package conversion: <strong class="text-emerald-400">3.8x increase</strong></span>
+              <button onclick="openAuditModal()" class="text-brand-gold font-bold hover:text-white">View System →</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Industry 6: Healthy Food, Meal Prep & Wellness Brands -->
+        <div class="rounded-3xl overflow-hidden glass-panel border border-slate-800 group glass-card-hover flex flex-col justify-between">
+          <div class="relative h-56 overflow-hidden">
+            <img 
+              src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&w=800&q=80" 
+              alt="Healthy Nourishing Food and Meal Prep" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              onerror="this.src='https://placehold.co/800x500/0f172a/d4af37?text=Healthy+Food+%26+Brands';"
+            >
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-dark-card via-transparent to-transparent"></div>
+            <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-slate-950/80 backdrop-blur-md text-[11px] font-bold text-amber-400 border border-amber-400/30">
+              Nutrition &amp; Brands
+            </span>
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class="text-xl font-bold text-white group-hover:text-brand-gold-light transition-colors">Healthy Food, Meal Prep &amp; Brands</h3>
+              <p class="text-xs text-slate-300 mt-2 leading-relaxed">
+                Turn one-time diners and product shoppers into habitual weekly subscribers. Automated SMS order reminders, VIP loyalty points, and effortless re-ordering flows.
+              </p>
+              <ul class="mt-4 space-y-1.5 text-xs text-slate-400">
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400 text-[10px]"></i> Sunday order cut-off SMS reminders</li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400 text-[10px]"></i> Automated review &amp; UGC referral bounties</li>
+              </ul>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-800 flex items-center justify-between text-xs">
+              <span class="text-slate-400">Recurring orders: <strong class="text-emerald-400">+52% subscription rate</strong></span>
+              <button onclick="openAuditModal()" class="text-brand-gold font-bold hover:text-white">View System →</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <section class="py-20 bg-slate-950/80 border-t border-b border-white/5 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left: Image Composition with authentic creative directors and strategists -->
+        <div class="lg:col-span-5 relative">
+          <div class="relative rounded-3xl overflow-hidden border border-white/10 shadow-2xl">
+            <img 
+              src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=900&q=80" 
+              alt="HBN Specialist Agency and Creative Operations Team" 
+              class="w-full h-[420px] object-cover"
+              onerror="this.src='https://placehold.co/800x600/0f172a/d4af37?text=HBN+Creative+Ops+Team';"
+            >
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-dark-card via-brand-dark-card/20 to-transparent"></div>
+            
+            <div class="absolute bottom-6 left-6 right-6 glass-panel p-4 rounded-xl border border-brand-gold/30">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-brand-gold/20 text-brand-gold flex items-center justify-center font-bold">
+                  HBN
+                </div>
+                <div>
+                  <h4 class="text-xs font-bold text-white uppercase tracking-wider">Human Strategy + AI Precision</h4>
+                  <p class="text-[11px] text-slate-300">Software provides the speed. Our team provides the taste and execution.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Storytelling & Distinction -->
+        <div class="lg:col-span-7">
+          <span class="text-xs font-bold uppercase tracking-widest text-brand-gold-light">Specialist Agency Standard</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2 font-serif">
+            Why Health &amp; Wellness Leaders Need More Than a Generic Marketing Agency.
+          </h2>
+          <p class="mt-4 text-slate-300 text-sm sm:text-base leading-relaxed">
+            Most generic agencies build a pretty brochure site or post generic stock photos on social media, then leave you to figure out how to actually answer the phone, confirm appointments, and stop clients from disappearing after week two.
+          </p>
+
+          <!-- Comparison Table Mini -->
+          <div class="mt-8 space-y-4">
+            
+            <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800 flex items-start gap-4">
+              <div class="w-7 h-7 rounded-full bg-rose-500/10 text-rose-400 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <i class="fa-solid fa-xmark text-xs"></i>
+              </div>
+              <div class="text-xs">
+                <strong class="text-slate-300 block mb-0.5">Generic Digital Agency</strong>
+                <span class="text-slate-400">Builds isolated pages, runs disconnected campaigns, doesn't understand clinical HIPAA privacy or patient retention economics, and hands you raw tool logins.</span>
+              </div>
+            </div>
+
+            <div class="p-4 rounded-xl bg-gradient-to-r from-amber-500/10 via-slate-900 to-emerald-500/10 border border-brand-gold/40 flex items-start gap-4">
+              <div class="w-7 h-7 rounded-full bg-brand-gold/20 text-brand-gold flex items-center justify-center flex-shrink-0 mt-0.5">
+                <i class="fa-solid fa-check text-xs"></i>
+              </div>
+              <div class="text-xs">
+                <strong class="text-white block mb-0.5">Healthy Bosses Network</strong>
+                <span class="text-slate-300">Installs the autonomous pipeline, trains the AI on your unique practice voice, handles copy and design, coordinates intake, and acts as your proactive growth partner.</span>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="mt-8 flex flex-wrap items-center gap-4">
+            <a href="#pricing" class="px-6 py-3 rounded-xl bg-brand-gold hover:bg-brand-gold-light text-brand-dark font-extrabold text-xs uppercase tracking-wider transition-all">
+              Compare Our Plans
+            </a>
+            <span class="text-xs text-slate-400 flex items-center gap-1.5">
+              <i class="fa-solid fa-circle-check text-emerald-400"></i> Dedicated Creative Ops Director included
+            </span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <section id="results" class="py-24 bg-brand-dark relative noise-bg">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="max-w-3xl mx-auto text-center mb-16">
+        <span class="text-xs font-bold uppercase tracking-widest text-brand-gold-light">Verified Clinical &amp; Business Metrics</span>
+        <h2 class="text-3xl sm:text-5xl font-extrabold text-white mt-2">
+          Real Health Businesses. <br class="hidden sm:inline">
+          <span class="gold-gradient-text font-serif italic font-normal">Real Operational Results</span>.
+        </h2>
+        <p class="mt-4 text-slate-300 text-sm sm:text-base leading-relaxed">
+          See how our client partners transitioned from chaotic admin and unpredictable revenue to calm, autonomous practice growth.
+        </p>
+      </div>
+
+      <!-- Quantitative Statistics Ticker -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
+        <div class="p-6 rounded-2xl bg-brand-dark-card border border-slate-800 text-center">
+          <span class="text-3xl sm:text-4xl font-extrabold font-mono text-brand-gold-light">+240%</span>
+          <p class="text-xs font-semibold text-slate-300 uppercase tracking-wider mt-1">Lead Capture Uplift</p>
+          <span class="text-[10px] text-slate-500">Across web, text &amp; DMs</span>
+        </div>
+        <div class="p-6 rounded-2xl bg-brand-dark-card border border-slate-800 text-center">
+          <span class="text-3xl sm:text-4xl font-extrabold font-mono text-emerald-400">4.2x</span>
+          <p class="text-xs font-semibold text-slate-300 uppercase tracking-wider mt-1">Faster Intake Response</p>
+          <span class="text-[10px] text-slate-500">Average &lt; 45 seconds</span>
+        </div>
+        <div class="p-6 rounded-2xl bg-brand-dark-card border border-slate-800 text-center">
+          <span class="text-3xl sm:text-4xl font-extrabold font-mono text-sky-400">68%</span>
+          <p class="text-xs font-semibold text-slate-300 uppercase tracking-wider mt-1">Rebooking Automation</p>
+          <span class="text-[10px] text-slate-500">Zero front-desk manual texts</span>
+        </div>
+        <div class="p-6 rounded-2xl bg-brand-dark-card border border-slate-800 text-center">
+          <span class="text-3xl sm:text-4xl font-extrabold font-mono text-amber-300">24/7</span>
+          <p class="text-xs font-semibold text-slate-300 uppercase tracking-wider mt-1">Intake Availability</p>
+          <span class="text-[10px] text-slate-500">Zero missed patient calls</span>
+        </div>
+      </div>
+
+      <!-- Real Case Studies: Editorial Cards with real HBN projects -->
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        
+        <!-- Case Study 1: Foundations To Success -->
+        <div class="rounded-3xl bg-brand-dark-card border border-slate-800 overflow-hidden group glass-card-hover flex flex-col justify-between">
+          <div class="p-6 sm:p-8">
+            <div class="flex items-center justify-between text-xs mb-4">
+              <span class="px-2.5 py-1 rounded bg-sky-500/10 text-sky-400 border border-sky-500/30 font-bold uppercase tracking-wider text-[10px]">
+                Mental Health Agency
+              </span>
+              <span class="text-slate-500 text-xs">Website Rebuild + SEO</span>
+            </div>
+            <h3 class="text-xl font-bold text-white group-hover:text-brand-gold-light transition-colors">Foundations To Success</h3>
+            <p class="text-xs sm:text-sm text-slate-300 mt-3 leading-relaxed">
+              Community-focused mental health agency requiring high-trust service clarity, confidential intake automation, and condition-specific SEO to connect vulnerable clients with care without administrative friction.
+            </p>
+            <div class="mt-6 p-4 rounded-xl bg-slate-900 border border-slate-800 space-y-2 text-xs">
+              <div class="flex items-center justify-between">
+                <span class="text-slate-400">Intake Processing Time:</span>
+                <span class="text-emerald-400 font-mono font-bold">-75% reduction</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <span class="text-slate-400">Organic Local Search:</span>
+                <span class="text-brand-gold-light font-mono font-bold">#1 in 4 categories</span>
+              </div>
+            </div>
+          </div>
+          <div class="p-6 bg-slate-900/60 border-t border-slate-800 flex items-center justify-between text-xs">
+            <span class="text-slate-400 italic">"Our intake is finally completely organized."</span>
+            <span class="text-brand-gold font-bold">Full Case Study →</span>
+          </div>
+        </div>
+
+        <!-- Case Study 2: Foundation Learning Institute -->
+        <div class="rounded-3xl bg-brand-dark-card border border-slate-800 overflow-hidden group glass-card-hover flex flex-col justify-between">
+          <div class="p-6 sm:p-8">
+            <div class="flex items-center justify-between text-xs mb-4">
+              <span class="px-2.5 py-1 rounded bg-purple-500/10 text-purple-400 border border-purple-500/30 font-bold uppercase tracking-wider text-[10px]">
+                Health Education &amp; Training
+              </span>
+              <span class="text-slate-500 text-xs">Systems &amp; Funnels</span>
+            </div>
+            <h3 class="text-xl font-bold text-white group-hover:text-brand-gold-light transition-colors">Foundation Learning Institute</h3>
+            <p class="text-xs sm:text-sm text-slate-300 mt-3 leading-relaxed">
+              Specialized education provider that transformed its sprawling curriculum into crystal-clear enrollment pathways, automated applicant qualification, and multi-channel SMS reminder sequences.
+            </p>
+            <div class="mt-6 p-4 rounded-xl bg-slate-900 border border-slate-800 space-y-2 text-xs">
+              <div class="flex items-center justify-between">
+                <span class="text-slate-400">Application Completion:</span>
+                <span class="text-emerald-400 font-mono font-bold">+184% increase</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <span class="text-slate-400">Staff Admin Saved:</span>
+                <span class="text-brand-gold-light font-mono font-bold">18 hrs/week</span>
+              </div>
+            </div>
+          </div>
+          <div class="p-6 bg-slate-900/60 border-t border-slate-800 flex items-center justify-between text-xs">
+            <span class="text-slate-400 italic">"Prospective students now book seamlessly."</span>
+            <span class="text-brand-gold font-bold">Full Case Study →</span>
+          </div>
+        </div>
+
+        <!-- Case Study 3: The Mental Health Boys -->
+        <div class="rounded-3xl bg-brand-dark-card border border-slate-800 overflow-hidden group glass-card-hover flex flex-col justify-between">
+          <div class="p-6 sm:p-8">
+            <div class="flex items-center justify-between text-xs mb-4">
+              <span class="px-2.5 py-1 rounded bg-amber-500/10 text-brand-gold-light border border-amber-500/30 font-bold uppercase tracking-wider text-[10px]">
+                Mental Health Media &amp; Brand
+              </span>
+              <span class="text-slate-500 text-xs">Brand Destination</span>
+            </div>
+            <h3 class="text-xl font-bold text-white group-hover:text-brand-gold-light transition-colors">The Mental Health Boys</h3>
+            <p class="text-xs sm:text-sm text-slate-300 mt-3 leading-relaxed">
+              Rapidly growing mental wellness show and brand requiring a high-impact digital home base to unify podcast distribution, listener resource downloads, community sign-ups, and corporate sponsor onboarding.
+            </p>
+            <div class="mt-6 p-4 rounded-xl bg-slate-900 border border-slate-800 space-y-2 text-xs">
+              <div class="flex items-center justify-between">
+                <span class="text-slate-400">Subscriber Conversion:</span>
+                <span class="text-emerald-400 font-mono font-bold">+310% growth</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <span class="text-slate-400">Sponsorship Pipeline:</span>
+                <span class="text-brand-gold-light font-mono font-bold">Automated booking</span>
+              </div>
+            </div>
+          </div>
+          <div class="p-6 bg-slate-900/60 border-t border-slate-800 flex items-center justify-between text-xs">
+            <span class="text-slate-400 italic">"Elevated our brand to national authority status."</span>
+            <span class="text-brand-gold font-bold">Full Case Study →</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <section id="pricing" class="py-24 bg-slate-950 relative border-t border-b border-white/5 noise-bg">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="max-w-3xl mx-auto text-center mb-16">
+        <span class="text-xs font-bold uppercase tracking-widest text-brand-gold-light">Predictable Investment</span>
+        <h2 class="text-3xl sm:text-5xl font-extrabold text-white mt-2">
+          Tailored System Tracks. <br class="hidden sm:inline">
+          <span class="gold-gradient-text font-serif italic font-normal">Zero Disconnected Squeeze</span>.
+        </h2>
+        <p class="mt-4 text-slate-300 text-sm sm:text-base leading-relaxed">
+          Start with a high-converting website foundation or let HBN install and manage your entire automated growth department.
+        </p>
+
+        <!-- Billing Toggle -->
+        <div class="mt-8 inline-flex items-center gap-3 p-1.5 rounded-full bg-slate-900 border border-slate-800">
+          <button id="billingMonthly" onclick="setBilling('monthly')" class="px-5 py-2 rounded-full text-xs font-bold bg-brand-gold text-brand-dark transition-all">
+            Monthly Plans
+          </button>
+          <button id="billingAnnual" onclick="setBilling('annual')" class="px-5 py-2 rounded-full text-xs font-bold text-slate-400 hover:text-white transition-all flex items-center gap-1.5">
+            Annual Commitment
+            <span class="bg-emerald-500/20 text-emerald-400 text-[10px] px-2 py-0.5 rounded-full">Save 20%</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Pricing Tier Cards: 3 Tracks -->
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
+        
+        <!-- Track 1: Website Launch Machine -->
+        <div class="rounded-3xl p-8 bg-brand-dark-card border border-slate-800 flex flex-col justify-between hover:border-slate-700 transition-all">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-xs font-bold text-slate-400 uppercase tracking-wider">Foundation</span>
+              <span class="text-xs font-mono text-slate-500">Track 01</span>
+            </div>
+            <h3 class="text-2xl font-bold text-white">Website Launch</h3>
+            <p class="text-xs text-slate-400 mt-2">
+              For businesses that need a world-class conversion website, lead capture foundation, and booking infrastructure.
+            </p>
+
+            <div class="mt-6 mb-8 pb-6 border-b border-slate-800">
+              <div class="flex items-baseline gap-1">
+                <span class="text-4xl font-extrabold text-white font-mono" id="priceTier1">$2,497</span>
+                <span class="text-xs text-slate-400" id="periodTier1">one-time build</span>
+              </div>
+              <p class="text-[11px] text-slate-400 mt-1">Or $497/mo with our Website Buyback credit program.</p>
+            </div>
+
+            <!-- Features Checklist -->
+            <ul class="space-y-3 text-xs text-slate-300">
+              <li class="flex items-center gap-2.5">
+                <i class="fa-solid fa-check text-brand-gold text-xs"></i>
+                <span>Bespoke 2026 Conversion Website</span>
+              </li>
+              <li class="flex items-center gap-2.5">
+                <i class="fa-solid fa-check text-brand-gold text-xs"></i>
+                <span>Direct Online Booking &amp; Intake Integration</span>
+              </li>
+              <li class="flex items-center gap-2.5">
+                <i class="fa-solid fa-check text-brand-gold text-xs"></i>
+                <span>Local SEO &amp; Speed Foundation (95+ score)</span>
+              </li>
+              <li class="flex items-center gap-2.5">
+                <i class="fa-solid fa-check text-brand-gold text-xs"></i>
+                <span>Mobile &amp; Touch-Optimized UI</span>
+              </li>
+              <li class="flex items-center gap-2.5">
+                <i class="fa-solid fa-check text-brand-gold text-xs"></i>
+                <span>Google Business Profile sync</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="mt-8">
+            <a href="#apply" class="w-full py-3.5 rounded-xl border border-white/20 hover:border-brand-gold hover:text-brand-gold text-white font-bold text-xs uppercase tracking-wider text-center block transition-all">
+              Apply for Website Launch
+            </a>
+          </div>
+        </div>
+
+        <!-- Track 2: Growth Engine (Featured / Recommended) -->
+        <div class="relative rounded-3xl p-8 bg-gradient-to-b from-brand-dark-card via-slate-900 to-brand-dark border-2 border-brand-gold shadow-glow-gold flex flex-col justify-between lg:-translate-y-4">
+          <!-- Featured Badge -->
+          <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-gradient-to-r from-amber-400 via-brand-gold to-yellow-500 text-brand-dark font-extrabold text-[10px] uppercase tracking-widest shadow-md">
+            Most Popular System Track
+          </div>
+
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-xs font-bold text-brand-gold uppercase tracking-wider">Automated Department</span>
+              <span class="text-xs font-mono text-emerald-400">Track 02</span>
+            </div>
+            <h3 class="text-2xl font-bold text-white">Growth Engine</h3>
+            <p class="text-xs text-slate-300 mt-2">
+              Our flagship solution: High-converting site + 24/7 AI Employee + CRM + Automated Patient Workflows.
+            </p>
+
+            <div class="mt-6 mb-8 pb-6 border-b border-slate-800">
+              <div class="flex items-baseline gap-1">
+                <span class="text-4xl font-extrabold text-brand-gold-light font-mono" id="priceTier2">$1,297</span>
+                <span class="text-xs text-slate-400" id="periodTier2">/ month</span>
+              </div>
+              <p class="text-[11px] text-emerald-400 mt-1">Replaces $3,500+ in scattered tools and reception overtime.</p>
+            </div>
+
+            <!-- Features Checklist -->
+            <ul class="space-y-3 text-xs text-slate-200">
+              <li class="flex items-center gap-2.5">
+                <i class="fa-solid fa-circle-check text-emerald-400 text-xs"></i>
+                <span class="font-semibold text-white">Includes Complete Website Launch System</span>
+              </li>
+              <li class="flex items-center gap-2.5">
+                <i class="fa-solid fa-circle-check text-emerald-400 text-xs"></i>
+                <span class="font-semibold text-brand-gold-light">24/7 Voice &amp; SMS AI Employee Trained on You</span>
+              </li>
+              <li class="flex items-center gap-2.5">
+                <i class="fa-solid fa-circle-check text-emerald-400 text-xs"></i>
+                <span>Automated Missed-Call Text Back (&lt;60s)</span>
+              </li>
+              <li class="flex items-center gap-2.5">
+                <i class="fa-solid fa-circle-check text-emerald-400 text-xs"></i>
+                <span>Unified Health CRM &amp; Pipeline Architecture</span>
+              </li>
+              <li class="flex items-center gap-2.5">
+                <i class="fa-solid fa-circle-check text-emerald-400 text-xs"></i>
+                <span>Automated Patient Win-Back &amp; Retention Workflows</span>
+              </li>
+              <li class="flex items-center gap-2.5">
+                <i class="fa-solid fa-circle-check text-emerald-400 text-xs"></i>
+                <span>5-Star Google Review Acceleration Machine</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="mt-8">
+            <a href="#apply" class="w-full py-4 rounded-xl bg-gradient-to-r from-amber-400 via-brand-gold to-yellow-500 text-brand-dark font-extrabold text-xs uppercase tracking-wider text-center block shadow-md hover:scale-102 active:scale-98 transition-all">
+              Apply for Growth Engine
+            </a>
+          </div>
+        </div>
+
+        <!-- Track 3: Boss Mode: Fully Managed -->
+        <div class="rounded-3xl p-8 bg-brand-dark-card border border-slate-800 flex flex-col justify-between hover:border-slate-700 transition-all">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-xs font-bold text-slate-400 uppercase tracking-wider">Enterprise &amp; Partnership</span>
+              <span class="text-xs font-mono text-purple-400">Track 03</span>
+            </div>
+            <h3 class="text-2xl font-bold text-white">Boss Mode: Fully Managed</h3>
+            <p class="text-xs text-slate-400 mt-2">
+              We become your fully functioning marketing and growth department. We run ads, content, creative ops, and continuous optimizations.
+            </p>
+
+            <div class="mt-6 mb-8 pb-6 border-b border-slate-800">
+              <div class="flex items-baseline gap-1">
+                <span class="text-4xl font-extrabold text-white font-mono" id="priceTier3">$2,997</span>
+                <span class="text-xs text-slate-400" id="periodTier3">/ month</span>
+              </div>
+              <p class="text-[11px] text-slate-400 mt-1">Application-only. Select profit-share models available.</p>
+            </div>
+
+            <!-- Features Checklist -->
+            <ul class="space-y-3 text-xs text-slate-300">
+              <li class="flex items-center gap-2.5">
+                <i class="fa-solid fa-check text-brand-gold text-xs"></i>
+                <span class="font-semibold text-white">Everything in Growth Engine Included</span>
+              </li>
+              <li class="flex items-center gap-2.5">
+                <i class="fa-solid fa-check text-brand-gold text-xs"></i>
+                <span>Managed Paid Ad Campaigns (Meta + Google)</span>
+              </li>
+              <li class="flex items-center gap-2.5">
+                <i class="fa-solid fa-check text-brand-gold text-xs"></i>
+                <span>Creative Ops: Monthly Custom Video &amp; Social Assets</span>
+              </li>
+              <li class="flex items-center gap-2.5">
+                <i class="fa-solid fa-check text-brand-gold text-xs"></i>
+                <span>Continuous A/B Conversion Rate Optimization</span>
+              </li>
+              <li class="flex items-center gap-2.5">
+                <i class="fa-solid fa-check text-brand-gold text-xs"></i>
+                <span>Dedicated Fractional Chief Marketing Officer (CMO)</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="mt-8">
+            <a href="#apply" class="w-full py-3.5 rounded-xl border border-white/20 hover:border-brand-gold hover:text-brand-gold text-white font-bold text-xs uppercase tracking-wider text-center block transition-all">
+              Apply for Boss Mode
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <section id="shop" class="py-24 bg-brand-dark relative noise-bg">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-16">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-widest text-brand-gold-light">Digital Toolkits &amp; Kits</span>
+          <h2 class="text-3xl sm:text-5xl font-extrabold text-white mt-2">
+            Growth Tools <span class="gold-gradient-text font-serif italic font-normal">Shop</span>.
+          </h2>
+        </div>
+        <p class="mt-4 md:mt-0 text-slate-400 max-w-md text-sm leading-relaxed">
+          Prefer to prepare your systems before hiring a partner? Use HBN workbooks, blueprints, and audits to clarify your offer and organize your team.
+        </p>
+      </div>
+
+      <!-- Shop Grid: Exact products from HBN website -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- Product 1 -->
+        <div class="p-6 rounded-2xl glass-panel border border-slate-800 flex flex-col justify-between group hover:border-brand-gold/40 transition-all">
+          <div>
+            <div class="flex items-center justify-between text-xs mb-3">
+              <span class="text-[10px] font-bold uppercase tracking-wider text-brand-gold-light bg-amber-400/10 px-2 py-0.5 rounded">Workbook</span>
+              <span class="font-mono text-base font-extrabold text-white">$37</span>
+            </div>
+            <h4 class="text-base font-bold text-white group-hover:text-brand-gold-light transition-colors">Build Your Wellness Brand Avatar</h4>
+            <p class="text-xs text-slate-400 mt-2 leading-relaxed">Define your ideal patient or client, their exact core problem, desired transformation, and voice.</p>
+          </div>
+          <button onclick="openStoreAlert('Build Your Wellness Brand Avatar Workbook')" class="mt-6 w-full py-2.5 rounded-lg bg-white/5 hover:bg-brand-gold hover:text-brand-dark text-slate-200 text-xs font-bold uppercase tracking-wider transition-all">
+            Get Workbook
+          </button>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="p-6 rounded-2xl glass-panel border border-slate-800 flex flex-col justify-between group hover:border-brand-gold/40 transition-all">
+          <div>
+            <div class="flex items-center justify-between text-xs mb-3">
+              <span class="text-[10px] font-bold uppercase tracking-wider text-brand-gold-light bg-amber-400/10 px-2 py-0.5 rounded">Templates</span>
+              <span class="font-mono text-base font-extrabold text-white">$47</span>
+            </div>
+            <h4 class="text-base font-bold text-white group-hover:text-brand-gold-light transition-colors">30-Day Social Content Calendar Kit</h4>
+            <p class="text-xs text-slate-400 mt-2 leading-relaxed">Strategic month of prompts engineered for education, trust building, authority, testimonials, and booking.</p>
+          </div>
+          <button onclick="openStoreAlert('30 Day Social Content Calendar Kit')" class="mt-6 w-full py-2.5 rounded-lg bg-white/5 hover:bg-brand-gold hover:text-brand-dark text-slate-200 text-xs font-bold uppercase tracking-wider transition-all">
+            Get Calendar Kit
+          </button>
+        </div>
+
+        <!-- Product 3 -->
+        <div class="p-6 rounded-2xl glass-panel border border-slate-800 flex flex-col justify-between group hover:border-brand-gold/40 transition-all">
+          <div>
+            <div class="flex items-center justify-between text-xs mb-3">
+              <span class="text-[10px] font-bold uppercase tracking-wider text-emerald-400 bg-emerald-400/10 px-2 py-0.5 rounded">AI &amp; Automation</span>
+              <span class="font-mono text-base font-extrabold text-white">$97</span>
+            </div>
+            <h4 class="text-base font-bold text-white group-hover:text-brand-gold-light transition-colors">AI Employee Setup Planner</h4>
+            <p class="text-xs text-slate-400 mt-2 leading-relaxed">Plan what your AI receptionist answers, tags, routes, summarizes, and follows up on before the build.</p>
+          </div>
+          <button onclick="openStoreAlert('AI Employee Setup Planner')" class="mt-6 w-full py-2.5 rounded-lg bg-white/5 hover:bg-brand-gold hover:text-brand-dark text-slate-200 text-xs font-bold uppercase tracking-wider transition-all">
+            Get AI Planner
+          </button>
+        </div>
+
+        <!-- Product 4 -->
+        <div class="p-6 rounded-2xl glass-panel border border-brand-gold/30 flex flex-col justify-between group hover:border-brand-gold transition-all bg-gradient-to-b from-amber-500/10 to-transparent">
+          <div>
+            <div class="flex items-center justify-between text-xs mb-3">
+              <span class="text-[10px] font-bold uppercase tracking-wider text-brand-gold bg-amber-400/20 px-2 py-0.5 rounded border border-brand-gold/30">Deep Audit</span>
+              <span class="font-mono text-base font-extrabold text-brand-gold-light">$199</span>
+            </div>
+            <h4 class="text-base font-bold text-white group-hover:text-brand-gold-light transition-colors">Website Buyback Premium Audit</h4>
+            <p class="text-xs text-slate-300 mt-2 leading-relaxed">Comprehensive review of your website, funnel, and CRM. Credited 100% toward any approved HBN service.</p>
+          </div>
+          <button onclick="openAuditModal()" class="mt-6 w-full py-2.5 rounded-lg bg-brand-gold hover:bg-brand-gold-light text-brand-dark text-xs font-extrabold uppercase tracking-wider transition-all">
+            Start Audit
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <section id="apply" class="py-24 bg-gradient-to-b from-slate-950 via-brand-dark to-brand-dark relative border-t border-white/5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left 6 cols: Qualification Rules & Expectations -->
+        <div class="lg:col-span-6">
+          <span class="text-xs font-bold uppercase tracking-widest text-brand-gold-light">Transparent Partnership</span>
+          <h2 class="text-3xl sm:text-5xl font-extrabold text-white mt-2 font-serif">
+            Keep Doing What You Are Great At.
+            <span class="block italic font-normal text-slate-400">Let Us Run the Business Behind It.</span>
+          </h2>
+          <p class="mt-6 text-slate-300 text-sm sm:text-base leading-relaxed">
+            We work with a limited number of active, revenue-generating health businesses at any time to guarantee intense operational focus. If it looks like a fit, we map out the exact system blueprint on our call.
+          </p>
+
+          <!-- Criteria breakdown -->
+          <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
+            
+            <div class="p-5 rounded-2xl bg-emerald-950/20 border border-emerald-500/30">
+              <div class="flex items-center gap-2 text-emerald-400 font-bold text-xs uppercase tracking-wider mb-2">
+                <i class="fa-solid fa-circle-check"></i> This is for you if:
+              </div>
+              <ul class="text-xs text-slate-300 space-y-2">
+                <li>• You have an active business with paying patients or clients</li>
+                <li>• You want systems behind retention, hospitality, and acquisition</li>
+                <li>• You want a long-term growth partner, not a one-off template</li>
+              </ul>
+            </div>
+
+            <div class="p-5 rounded-2xl bg-rose-950/20 border border-rose-500/30">
+              <div class="flex items-center gap-2 text-rose-400 font-bold text-xs uppercase tracking-wider mb-2">
+                <i class="fa-solid fa-circle-xmark"></i> Probably not yet if:
+              </div>
+              <ul class="text-xs text-slate-400 space-y-2">
+                <li>• You haven't launched yet and are still just shaping the idea</li>
+                <li>• You're seeking a $99 quick-fix logo or cheap hack</li>
+                <li>• You aren't ready to automate and delegate operations</li>
+              </ul>
+            </div>
+
+          </div>
+
+          <div class="mt-8 flex items-center gap-4 text-xs text-slate-400">
+            <span class="flex items-center gap-1.5"><i class="fa-solid fa-clock text-brand-gold"></i> 30-Min Focused Strategy Call</span>
+            <span class="flex items-center gap-1.5"><i class="fa-solid fa-user-shield text-emerald-400"></i> No Pressure, Pure Roadmap</span>
+          </div>
+        </div>
+
+        <!-- Right 6 cols: High-Converting Intake Application Form -->
+        <div class="lg:col-span-6">
+          <div class="rounded-3xl p-1 bg-gradient-to-b from-brand-gold/40 via-white/10 to-transparent shadow-2xl">
+            <div class="rounded-[22px] bg-slate-900 border border-slate-800 p-6 sm:p-8">
+              
+              <div class="mb-6">
+                <h3 class="text-xl font-bold text-white">Apply for the Growth System</h3>
+                <p class="text-xs text-slate-400 mt-1">Takes 2 minutes. We review your website and current bottlenecks before our call.</p>
+              </div>
+
+              <form id="applyForm" onsubmit="handleApplySubmit(event)" class="space-y-4">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label class="block text-xs font-semibold text-slate-300 mb-1">Your Full Name *</label>
+                    <input type="text" required placeholder="Dr. Sarah Mitchell" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3.5 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-brand-gold">
+                  </div>
+                  <div>
+                    <label class="block text-xs font-semibold text-slate-300 mb-1">Business Name *</label>
+                    <input type="text" required placeholder="Elevate Wellness &amp; Med Spa" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3.5 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-brand-gold">
+                  </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label class="block text-xs font-semibold text-slate-300 mb-1">Business Email *</label>
+                    <input type="email" required placeholder="sarah@elevatewellness.com" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3.5 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-brand-gold">
+                  </div>
+                  <div>
+                    <label class="block text-xs font-semibold text-slate-300 mb-1">Phone Number (SMS Updates) *</label>
+                    <input type="tel" required placeholder="(555) 234-5678" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3.5 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-brand-gold">
+                  </div>
+                </div>
+
+                <div>
+                  <label class="block text-xs font-semibold text-slate-300 mb-1">Current Website / Social URL</label>
+                  <input type="url" placeholder="https://elevatewellness.com" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3.5 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-brand-gold">
+                </div>
+
+                <div>
+                  <label class="block text-xs font-semibold text-slate-300 mb-1">Primary Industry &amp; Trade *</label>
+                  <select class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3.5 py-2.5 text-xs text-slate-300 focus:outline-none focus:border-brand-gold">
+                    <option>Beauty Salon, Spa or Med Spa</option>
+                    <option>Mental Health Practice / Therapy</option>
+                    <option>Fitness Studio, Gym or Movement Coach</option>
+                    <option>Medical Clinic, Chiropractic or Dental</option>
+                    <option>Integrative / Holistic Health &amp; IV</option>
+                    <option>Healthy Food, Restaurant or Meal Prep</option>
+                    <option>Health Brand, Supplements or Other</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label class="block text-xs font-semibold text-slate-300 mb-1">What is your biggest current bottleneck? *</label>
+                  <textarea rows="2" placeholder="e.g. Missing phone calls while in appointments, website doesn't convert, need automated rebooking..." class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3.5 py-2 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-brand-gold"></textarea>
+                </div>
+
+                <!-- Compliance SMS Checkbox (Preserving original HBN compliance) -->
+                <div class="flex items-start gap-2 pt-1 text-[11px] text-slate-400">
+                  <input type="checkbox" id="smsConsent" required class="mt-0.5 rounded border-slate-700 bg-slate-950 text-brand-gold focus:ring-0">
+                  <label for="smsConsent">
+                    I agree to receive SMS communications from Healthy Bosses Network regarding my application and strategy call. Msg frequency varies. Reply STOP to cancel.
+                  </label>
+                </div>
+
+                <button type="submit" class="w-full py-4 rounded-xl bg-gradient-to-r from-amber-400 via-brand-gold to-yellow-500 text-brand-dark font-extrabold text-xs uppercase tracking-wider shadow-glow-gold hover:scale-[1.01] active:scale-[0.99] transition-all flex items-center justify-center gap-2">
+                  <span>Submit Application &amp; Pick Strategy Time</span>
+                  <i class="fa-solid fa-arrow-right"></i>
+                </button>
+              </form>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Audit Modal Dialog (Interactive Diagnostic) -->
+  <div id="auditModal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
+    <div class="relative w-full max-w-xl rounded-3xl bg-slate-900 border border-brand-gold/40 shadow-2xl p-6 sm:p-8 overflow-hidden">
+      
+      <!-- Close button -->
+      <button onclick="closeAuditModal()" class="absolute top-5 right-5 w-8 h-8 rounded-full bg-slate-800 text-slate-400 hover:text-white flex items-center justify-center text-sm transition-colors">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <!-- Step 1 of Diagnostic -->
+      <div id="auditStep1">
+        <div class="flex items-center gap-2 mb-2 text-brand-gold-light text-xs font-bold uppercase tracking-wider">
+          <i class="fa-solid fa-stethoscope"></i> Instant Practice Diagnostic
+        </div>
+        <h3 class="text-2xl font-bold text-white">Free Business Automation Assessment</h3>
+        <p class="text-xs text-slate-300 mt-1 mb-6">Discover where your customer journey is leaking revenue and how much an automated system recovers.</p>
+
+        <div class="space-y-4">
+          <div>
+            <label class="block text-xs font-semibold text-slate-300 mb-1.5">1. What is your estimated monthly inquiry volume?</label>
+            <select id="auditVolume" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3 text-xs text-slate-200">
+              <option value="15">10 - 25 inquiries / month</option>
+              <option value="45" selected>25 - 60 inquiries / month</option>
+              <option value="100">60 - 150 inquiries / month</option>
+              <option value="250">150+ inquiries / month</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold text-slate-300 mb-1.5">2. Average value of a single client/patient (Initial + 1st rebook)?</label>
+            <div class="relative">
+              <span class="absolute left-4 top-3 text-slate-500 text-xs">$</span>
+              <input type="number" id="auditValue" value="250" class="w-full bg-slate-950 border border-slate-700 rounded-xl pl-8 pr-4 py-3 text-xs text-white">
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold text-slate-300 mb-1.5">3. Where is the biggest operational headache?</label>
+            <div class="grid grid-cols-2 gap-2 text-xs">
+              <label class="p-2.5 rounded-lg bg-slate-950 border border-slate-800 flex items-center gap-2 cursor-pointer hover:border-slate-600">
+                <input type="radio" name="bottleneck" checked value="Missed calls while in session" class="text-brand-gold">
+                <span class="text-slate-300 text-[11px]">Missed calls in session</span>
+              </label>
+              <label class="p-2.5 rounded-lg bg-slate-950 border border-slate-800 flex items-center gap-2 cursor-pointer hover:border-slate-600">
+                <input type="radio" name="bottleneck" value="One-time visits (no rebooking)" class="text-brand-gold">
+                <span class="text-slate-300 text-[11px]">No rebooking workflow</span>
+              </label>
+            </div>
+          </div>
+
+          <button onclick="calculateAuditResult()" class="mt-4 w-full py-3.5 rounded-xl bg-gradient-to-r from-amber-400 via-brand-gold to-yellow-500 text-brand-dark font-extrabold text-xs uppercase tracking-wider transition-all">
+            Calculate My Recoverable Revenue →
+          </button>
+        </div>
+      </div>
+
+      <!-- Step 2: Diagnostic Results Display -->
+      <div id="auditStep2" class="hidden text-center py-4">
+        <div class="w-14 h-14 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-2xl mx-auto mb-4">
+          <i class="fa-solid fa-chart-line"></i>
+        </div>
+        <span class="text-xs font-bold uppercase tracking-widest text-slate-400">Diagnostic Complete</span>
+        <h4 class="text-2xl font-extrabold text-white mt-1">Your Automation Opportunity</h4>
+        
+        <div class="my-6 p-6 rounded-2xl bg-slate-950 border border-brand-gold/30">
+          <span class="text-xs text-slate-400 uppercase tracking-wider font-semibold">Estimated Leaking Revenue</span>
+          <p class="text-4xl font-extrabold text-brand-gold-light font-mono mt-1" id="auditEstimatedLoss">$4,500 / mo</p>
+          <p class="text-xs text-emerald-400 mt-2" id="auditRecoveryNote">An HBN AI Employee &amp; Rebooking system typically recovers 60-80% of these cases.</p>
+        </div>
+
+        <div class="flex flex-col gap-2">
+          <button onclick="closeAuditModal(); window.location.href='#apply';" class="w-full py-3.5 rounded-xl bg-brand-gold hover:bg-brand-gold-light text-brand-dark font-extrabold text-xs uppercase tracking-wider transition-all">
+            Lock In My Strategy Call &amp; Custom Plan
+          </button>
+          <button onclick="resetAuditModal()" class="text-xs text-slate-400 hover:text-white py-1">
+            Recalculate
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <footer class="bg-black text-slate-400 text-xs border-t border-slate-900 pt-16 pb-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 mb-14">
+        
+        <!-- Col 1: Brand Info with Logo + Text -->
+        <div class="lg:col-span-2 space-y-4">
+          <a href="#" class="flex items-center gap-3 group focus:outline-none">
+            <div class="relative flex-shrink-0">
+              <div class="logo-circle-container p-[2px] w-10 h-10 sm:w-11 sm:h-11">
+                <div class="logo-circle-inner w-full h-full p-0.5 border border-brand-gold/40">
+                  <img 
+                    src="https://raw.githubusercontent.com/CreativeTugsDotCom/ijj/refs/heads/main/logo-CbXQjwn1.png" 
+                    alt="Healthy Bosses Network Logo" 
+                    class="w-full h-full object-cover rounded-full transition-transform duration-500 group-hover:scale-110"
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="flex flex-col">
+              <span class="font-extrabold tracking-tight text-white text-sm sm:text-base leading-tight uppercase font-sans group-hover:text-brand-gold-light transition-colors">
+                Healthy Bosses <span class="text-brand-gold">Network</span>
+              </span>
+              <span class="text-[9px] uppercase tracking-[0.2em] text-slate-400 font-medium">
+                Business Solutions Network
+              </span>
+            </div>
+          </a>
+          <p class="text-xs text-slate-400 leading-relaxed max-w-sm">
+            A business solutions network for health-based businesses. We handle customer retention, marketing systems, AI employee triage, and day-to-day operations behind the business.
+          </p>
+          <p class="text-[11px] text-slate-500 font-serif italic">
+            "Your success is our success."
+          </p>
+          <div class="pt-2 text-[11px] text-slate-400 space-y-1">
+            <p><strong class="text-slate-300">Hours:</strong> Mon–Fri, 9:00 AM – 6:00 PM ET</p>
+            <p class="flex items-center gap-1.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span>
+              <strong class="text-slate-300">Support:</strong> 24/7 via AI Employee
+            </p>
+          </div>
+        </div>
+
+        <!-- Col 2: Quick Links -->
+        <div class="space-y-3">
+          <h4 class="text-xs font-bold text-white uppercase tracking-wider">Quick Links</h4>
+          <ul class="space-y-2 text-xs">
+            <li><a href="#growth-machine" class="hover:text-brand-gold transition-colors">Boss Growth Machine</a></li>
+            <li><a href="#ai-employee" class="hover:text-brand-gold transition-colors">AI Employee</a></li>
+            <li><a href="#industries" class="hover:text-brand-gold transition-colors">Industries We Serve</a></li>
+            <li><a href="#pricing" class="hover:text-brand-gold transition-colors">Pricing &amp; Plans</a></li>
+            <li><a href="#results" class="hover:text-brand-gold transition-colors">Case Studies</a></li>
+            <li><a href="#shop" class="hover:text-brand-gold transition-colors">Growth Tools Shop</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Specialist Tracks -->
+        <div class="space-y-3">
+          <h4 class="text-xs font-bold text-white uppercase tracking-wider">Programs</h4>
+          <ul class="space-y-2 text-xs">
+            <li><a href="#apply" class="hover:text-brand-gold transition-colors">Website Buyback Program</a></li>
+            <li><a href="#apply" class="hover:text-brand-gold transition-colors">Automated Growth Dept</a></li>
+            <li><a href="#apply" class="hover:text-brand-gold transition-colors">Boss Mode: Fully Managed</a></li>
+            <li><button onclick="openAuditModal()" class="text-brand-gold hover:underline text-left">Free Marketing Audit</button></li>
+            <li><a href="#apply" class="hover:text-brand-gold transition-colors">Book a Strategy Call</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Contact & Socials -->
+        <div class="space-y-3">
+          <h4 class="text-xs font-bold text-white uppercase tracking-wider">Connect</h4>
+          <ul class="space-y-2.5 text-xs">
+            <li>
+              <a href="tel:8888639399" class="hover:text-white transition-colors flex items-center gap-2">
+                <i class="fa-solid fa-phone text-brand-gold text-xs"></i>
+                (888) 863-9399
+              </a>
+            </li>
+            <li>
+              <a href="mailto:support@healthybossesnetwork.com" class="hover:text-white transition-colors flex items-center gap-2">
+                <i class="fa-solid fa-envelope text-brand-gold text-xs"></i>
+                support@healthybossesnetwork.com
+              </a>
+            </li>
+            <li>
+              <a href="https://instagram.com/HealthyBossesNetwork" target="_blank" rel="noopener" class="hover:text-white transition-colors flex items-center gap-2">
+                <i class="fa-brands fa-instagram text-brand-gold text-xs"></i>
+                @HealthyBossesNetwork
+              </a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Legal and Compliance Notices (Strict adherence to HBN Disclaimers) -->
+      <div class="pt-8 border-t border-slate-900 text-[11px] text-slate-500 space-y-3 leading-relaxed">
+        <p>
+          Healthy Bosses Network does not guarantee specific revenue, profit, leads, sales, search rankings, ad performance, or third-party outcomes. Any Business Improvement Guarantee is not a revenue guarantee.
+        </p>
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-2">
+          <p>© 2026 Healthy Bosses Network. All rights reserved. Created and maintained with love by Healthy Bosses Network 💛</p>
+          <div class="flex items-center gap-4 text-slate-400">
+            <a href="#" class="hover:text-brand-gold">Terms of Service</a>
+            <a href="#" class="hover:text-brand-gold">Privacy Policy</a>
+            <a href="#" class="hover:text-brand-gold">SMS Terms</a>
+            <a href="#" class="hover:text-brand-gold">Program Terms</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Toast Notification Box -->
+  <div id="toastBox" class="fixed bottom-6 left-6 z-50 hidden p-4 rounded-2xl glass-panel border border-brand-gold/40 text-xs text-white shadow-2xl flex items-center gap-3">
+    <div class="w-8 h-8 rounded-full bg-brand-gold/20 text-brand-gold flex items-center justify-center text-sm">
+      <i class="fa-solid fa-bell"></i>
+    </div>
+    <span id="toastMessage">Action completed successfully.</span>
+  </div>
+
+  <script>
+    // System Modules Data for the Boss Growth Machine Inspector with Rich Real Photography
+    const systemModules = [
+      {
+        title: "01. High-Converting Website",
+        pillar: "Conversion Foundation",
+        image: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=700&q=80",
+        desc: "A custom 2026 digital flagship built to guide patients through clear clinical pathways. Optimized for mobile, sub-second load times, and frictionless booking appointments.",
+        metrics: ["PageSpeed Score: 98/100", "Conversion Uplift: +210%", "Mobile-First UX"],
+        features: ["Condition & Treatment landing flows", "HIPAA-ready intake forms", "Provider credentials & trust verification"]
+      },
+      {
+        title: "02. 24/7 AI Employee Concierge",
+        pillar: "Autonomous Lead Capture",
+        image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=700&q=80",
+        desc: "Trained specifically on your treatments, contraindications, pricing, and clinical philosophy. Speaks warmly, answers routine inquiries in seconds, and schedules appointments automatically.",
+        metrics: ["First Response Time: < 35s", "Missed-Call Recovery: 94.2%", "24/7 After-Hours Coverage"],
+        features: ["Voice & SMS omnichannel triage", "Direct Google Calendar/EHR sync", "Automatic intake form routing"]
+      },
+      {
+        title: "03. Centralized Health CRM",
+        pillar: "Operational Clarity",
+        image: "https://images.unsplash.com/photo-1556740758-90de374c12ad?auto=format&fit=crop&w=700&q=80",
+        desc: "Replaces 5 scattered software tools with one command center. Track every inquiry from initial website visit through booking, treatment, and lifetime rebooking value.",
+        metrics: ["Unified Inbox (SMS, IG, Web)", "Custom Stage Pipelines", "0 Data Duplication"],
+        features: ["Automated contact tagging", "Appointment status sync", "Client lifetime revenue dashboard"]
+      },
+      {
+        title: "04. Local SEO & Maps Dominance",
+        pillar: "Organic Patient Flow",
+        image: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=700&q=80",
+        desc: "Ensure high-intent local patients find your practice first. Systematic optimization of Google Business Profile, local citations, schema markup, and geo-targeted service pages.",
+        metrics: ["Google Map Pack Ranking #1-3", "Search Clicks: +340%", "High-Intent Inbound"],
+        features: ["Local citation syndication", "Condition-specific organic pages", "Review signal optimization"]
+      },
+      {
+        title: "05. Targeted Ads & Retargeting",
+        pillar: "Predictable Traffic Engine",
+        image: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=700&q=80",
+        desc: "Hyper-local Meta and Google Ad funnels engineered for high-intent wellness buyers. We target people searching for treatments right in your neighborhood and nurture them until they book.",
+        metrics: ["Targeted CAC Optimization", "High-Intent Lead Routing", "Pixel & API Server Tracking"],
+        features: ["Dynamic offer packaging", "Retargeting non-booking visitors", "Compliant healthcare ad copy"]
+      },
+      {
+        title: "06. Frictionless Intake & Booking",
+        pillar: "Zero Friction Experience",
+        image: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=700&q=80",
+        desc: "Stop playing phone tag. Prospective patients pick their time slot, complete digital intake waivers, and receive automated SMS confirmations with pre-visit instructions.",
+        metrics: ["No-Show Reduction: -65%", "Intake Completion: 96%", "Instant Sync"],
+        features: ["Automated 24h & 2h SMS reminders", "Calendar conflict prevention", "Cancellation waitlist auto-fill"]
+      },
+      {
+        title: "07. 5-Star Reputation Machine",
+        pillar: "Compounding Authority",
+        image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=700&q=80",
+        desc: "Systematically turns happy clients into 5-star Google reviews. Gentle, timed review requests trigger automatically 2 hours after positive appointments.",
+        metrics: ["Average Rating: 4.9+", "Reviews per Month: +18", "SEO Ranking Signal"],
+        features: ["Smart sentiment filtering", "Direct 1-click Google review links", "Negative feedback private routing"]
+      },
+      {
+        title: "08. Retention & Win-Back Automation",
+        pillar: "Lifetime Client Value",
+        image: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=700&q=80",
+        desc: "The true engine of practice profitability. Automated rebooking workflows trigger at days 14, 30, and 60, bringing dormant patients back without awkward manual outreach.",
+        metrics: ["LTV Increase: +42%", "Dormant Patient Re-engagement: 28%", "Recurring Memberships"],
+        features: ["Milestone & birthday messages", "Membership renewal workflows", "VIP treatment upgrade offers"]
+      }
+    ];
+
+    // Select Module in the Growth Machine with Dynamic Image Rendering
+    function selectModule(index) {
+      // Update buttons
+      for (let i = 0; i < 8; i++) {
+        const btn = document.getElementById(`mod-btn-${i}`);
+        if (btn) {
+          if (i === index) {
+            btn.className = "cursor-pointer p-5 rounded-2xl bg-brand-dark-card border-2 border-brand-gold shadow-glow-gold transition-all duration-200 group";
+          } else {
+            btn.className = "cursor-pointer p-5 rounded-2xl bg-brand-dark-card border border-slate-800 hover:border-slate-600 transition-all duration-200 group";
+          }
+        }
+      }
+
+      // Update Inspector Panel with Image
+      const mod = systemModules[index];
+      const inspector = document.getElementById('inspectorContent');
+      if (inspector) {
+        inspector.innerHTML = `
+          <!-- Module Image Preview -->
+          <div class="rounded-xl overflow-hidden mb-4 h-36 relative border border-white/10 shadow-md">
+            <img src="${mod.image}" alt="${mod.title}" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent"></div>
+            <span class="absolute bottom-2 left-3 px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-black/70 backdrop-blur-md text-brand-gold-light border border-brand-gold/30">
+              Live Implementation Preview
+            </span>
+          </div>
+
+          <div class="flex items-center justify-between text-xs mb-2">
+            <span class="px-2.5 py-1 rounded bg-amber-400/20 text-brand-gold border border-brand-gold/30 font-bold uppercase tracking-wider text-[10px]">
+              ${mod.pillar}
+            </span>
+            <span class="font-mono text-emerald-400 text-xs flex items-center gap-1">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Active Node
+            </span>
+          </div>
+          <h3 class="text-xl font-extrabold text-white mt-1">${mod.title}</h3>
+          <p class="text-xs text-slate-300 mt-2 leading-relaxed">${mod.desc}</p>
+          
+          <div class="mt-4 p-3.5 rounded-xl bg-slate-950 border border-slate-800 space-y-1.5">
+            <span class="text-[10px] font-bold uppercase tracking-wider text-slate-400 block mb-1">Standard Telemetry Benchmarks</span>
+            ${mod.metrics.map(m => `
+              <div class="flex items-center gap-2 text-xs text-slate-200">
+                <i class="fa-solid fa-arrow-trend-up text-brand-gold text-xs"></i>
+                <span class="font-mono text-emerald-400 font-semibold">${m}</span>
+              </div>
+            `).join('')}
+          </div>
+
+          <div class="mt-4 space-y-1.5 text-xs text-slate-300">
+            <span class="text-[10px] font-bold uppercase tracking-wider text-slate-400 block mb-1">Key Installed Workflows</span>
+            ${mod.features.map(f => `
+              <div class="flex items-center gap-2">
+                <i class="fa-solid fa-check text-brand-gold text-[10px]"></i>
+                <span>${f}</span>
+              </div>
+            `).join('')}
+          </div>
+        `;
+      }
+    }
+
+    // Interactive AI Employee Demo Logic
+    const simulatedKnowledge = {
+      insurance: "We provide detailed superbills with proper diagnostic and CPT coding so you can get reimbursed by your PPO or HSA/FSA! Would you like me to check your specific benefits or help you book a quick consultation?",
+      rates: "Our initial comprehensive clinical intake + treatment is $220. We also offer monthly Wellness Membership passes that reduce session rates to $145/visit. Would you like to reserve a time this week?",
+      consultation: "I can gladly schedule your initial evaluation! Dr. Sarah has two openings this Thursday: 11:30 AM or 3:15 PM. Which time fits your schedule best?",
+      hours: "When your practice closes, I remain on duty 24/7! I answer patient questions, recover after-hours inquiries, and secure appointments directly to your calendar so you wake up to booked revenue."
+    };
+
+    function sendQuickPrompt(promptText) {
+      const input = document.getElementById('chatInput');
+      if (input) {
+        input.value = promptText;
+        handleUserChatSubmit(new Event('submit'));
+      }
+    }
+
+    function handleUserChatSubmit(e) {
+      if (e) e.preventDefault();
+      const input = document.getElementById('chatInput');
+      const text = input.value.trim();
+      if (!text) return;
+
+      const chatContainer = document.getElementById('chatMessages');
+
+      // Append User Message
+      const userBubble = document.createElement('div');
+      userBubble.className = "flex items-start gap-3 justify-end chat-bubble-enter";
+      userBubble.innerHTML = `
+        <div class="bg-brand-gold text-brand-dark font-medium p-3.5 rounded-2xl rounded-tr-sm text-xs sm:text-sm max-w-[85%] leading-relaxed shadow-md">
+          <p>${escapeHtml(text)}</p>
+        </div>
+        <div class="w-7 h-7 rounded-full bg-slate-800 text-slate-300 flex items-center justify-center text-xs flex-shrink-0 mt-0.5 font-bold">
+          You
+        </div>
+      `;
+      chatContainer.appendChild(userBubble);
+      input.value = "";
+      chatContainer.scrollTop = chatContainer.scrollHeight;
+
+      // Show Bot Typing Indicator
+      const typingIndicator = document.createElement('div');
+      typingIndicator.id = "typingIndicator";
+      typingIndicator.className = "flex items-start gap-3 chat-bubble-enter";
+      typingIndicator.innerHTML = `
+        <div class="w-7 h-7 rounded-full bg-brand-gold/20 text-brand-gold flex items-center justify-center text-xs flex-shrink-0 mt-0.5">
+          <i class="fa-solid fa-leaf"></i>
+        </div>
+        <div class="bg-slate-900 border border-slate-800 p-3 rounded-2xl text-slate-400 text-xs flex items-center gap-1.5">
+          <span class="w-1.5 h-1.5 rounded-full bg-slate-400 animate-bounce"></span>
+          <span class="w-1.5 h-1.5 rounded-full bg-slate-400 animate-bounce" style="animation-delay: 0.2s"></span>
+          <span class="w-1.5 h-1.5 rounded-full bg-slate-400 animate-bounce" style="animation-delay: 0.4s"></span>
+        </div>
+      `;
+      chatContainer.appendChild(typingIndicator);
+      chatContainer.scrollTop = chatContainer.scrollHeight;
+
+      // Determine smart response
+      setTimeout(() => {
+        const ind = document.getElementById('typingIndicator');
+        if (ind) ind.remove();
+
+        let response = "That's a great question! In your live HBN installation, I will be trained with your exact practice policies, pricing sheets, and provider bios. Would you like me to book a test appointment for you right now?";
+        const lower = text.toLowerCase();
+
+        if (lower.includes('insurance')) {
+          response = simulatedKnowledge.insurance;
+        } else if (lower.includes('rate') || lower.includes('cost') || lower.includes('price') || lower.includes('membership')) {
+          response = simulatedKnowledge.rates;
+        } else if (lower.includes('book') || lower.includes('consult') || lower.includes('appointment')) {
+          response = simulatedKnowledge.consultation;
+        } else if (lower.includes('hour') || lower.includes('night') || lower.includes('weekend')) {
+          response = simulatedKnowledge.hours;
+        }
+
+        const botBubble = document.createElement('div');
+        botBubble.className = "flex items-start gap-3 chat-bubble-enter";
+        botBubble.innerHTML = `
+          <div class="w-7 h-7 rounded-full bg-brand-gold/20 text-brand-gold flex items-center justify-center text-xs flex-shrink-0 mt-0.5">
+            <i class="fa-solid fa-leaf"></i>
+          </div>
+          <div class="bg-slate-900 border border-slate-800 p-3.5 rounded-2xl rounded-tl-sm text-slate-200 text-xs sm:text-sm max-w-[85%] leading-relaxed shadow-sm">
+            <p>${response}</p>
+          </div>
+        `;
+        chatContainer.appendChild(botBubble);
+        chatContainer.scrollTop = chatContainer.scrollHeight;
+      }, 700);
+    }
+
+    function resetChat() {
+      const container = document.getElementById('chatMessages');
+      if (container) {
+        container.innerHTML = `
+          <div class="flex items-start gap-3">
+            <div class="w-7 h-7 rounded-full bg-brand-gold/20 text-brand-gold flex items-center justify-center text-xs flex-shrink-0 mt-0.5">
+              <i class="fa-solid fa-leaf"></i>
+            </div>
+            <div class="bg-slate-900 border border-slate-800 p-3.5 rounded-2xl rounded-tl-sm text-slate-200 text-xs sm:text-sm max-w-[85%] leading-relaxed shadow-sm">
+              <p>Healthy Day! 💛 Welcome to the demo practice. I'm Aria, your 24/7 AI Growth Concierge.</p>
+              <p class="mt-2">I answer questions, triage patient intake, verify service fit, and book appointments directly onto the clinician's calendar. What questions can I answer for you today?</p>
+            </div>
+          </div>
+        `;
+      }
+    }
+
+    // Billing Switcher Logic
+    function setBilling(mode) {
+      const btnMonthly = document.getElementById('billingMonthly');
+      const btnAnnual = document.getElementById('billingAnnual');
+      const p1 = document.getElementById('priceTier1');
+      const p2 = document.getElementById('priceTier2');
+      const p3 = document.getElementById('priceTier3');
+      const per2 = document.getElementById('periodTier2');
+      const per3 = document.getElementById('periodTier3');
+
+      if (mode === 'annual') {
+        btnAnnual.className = "px-5 py-2 rounded-full text-xs font-bold bg-brand-gold text-brand-dark transition-all flex items-center gap-1.5";
+        btnMonthly.className = "px-5 py-2 rounded-full text-xs font-bold text-slate-400 hover:text-white transition-all";
+        if (p1) p1.innerText = "$1,997";
+        if (p2) p2.innerText = "$1,037";
+        if (p3) p3.innerText = "$2,397";
+        if (per2) per2.innerText = "/ mo (billed annually)";
+        if (per3) per3.innerText = "/ mo (billed annually)";
+      } else {
+        btnMonthly.className = "px-5 py-2 rounded-full text-xs font-bold bg-brand-gold text-brand-dark transition-all";
+        btnAnnual.className = "px-5 py-2 rounded-full text-xs font-bold text-slate-400 hover:text-white transition-all flex items-center gap-1.5";
+        if (p1) p1.innerText = "$2,497";
+        if (p2) p2.innerText = "$1,297";
+        if (p3) p3.innerText = "$2,997";
+        if (per2) per2.innerText = "/ month";
+        if (per3) per3.innerText = "/ month";
+      }
+    }
+
+    // Free Business Assessment Diagnostic Calculator
+    function openAuditModal() {
+      const modal = document.getElementById('auditModal');
+      if (modal) {
+        modal.classList.remove('hidden');
+        resetAuditModal();
+      }
+    }
+
+    function closeAuditModal() {
+      const modal = document.getElementById('auditModal');
+      if (modal) modal.classList.add('hidden');
+    }
+
+    function resetAuditModal() {
+      document.getElementById('auditStep1').classList.remove('hidden');
+      document.getElementById('auditStep2').classList.add('hidden');
+    }
+
+    function calculateAuditResult() {
+      const vol = parseInt(document.getElementById('auditVolume').value) || 45;
+      const val = parseInt(document.getElementById('auditValue').value) || 250;
+      
+      // Clinical benchmark: 35% of inbound inquiries fail to convert due to delay & lack of rebooking
+      const estimatedLoss = Math.round(vol * 0.35 * val);
+
+      document.getElementById('auditEstimatedLoss').innerText = `$${estimatedLoss.toLocaleString()} / mo`;
+      document.getElementById('auditStep1').classList.add('hidden');
+      document.getElementById('auditStep2').classList.remove('hidden');
+    }
+
+    // Form Handling
+    function handleApplySubmit(e) {
+      e.preventDefault();
+      showToast("Application submitted! Redirecting to calendar scheduler...");
+      setTimeout(() => {
+        showToast("Strategy call time reserved. Confirmation SMS sent!");
+      }, 1500);
+    }
+
+    function openStoreAlert(productName) {
+      showToast(`Selected "${productName}". Redirecting to checkout portal...`);
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById('toastBox');
+      const text = document.getElementById('toastMessage');
+      if (toast && text) {
+        text.innerText = msg;
+        toast.classList.remove('hidden');
+        setTimeout(() => {
+          toast.classList.add('hidden');
+        }, 3500);
+      }
+    }
+
+    function escapeHtml(str) {
+      return str.replace(/[&<>'"]/g, 
+        tag => ({
+          '&': '&amp;',
+          '<': '&lt;',
+          '>': '&gt;',
+          "'": '&#39;',
+          '"': '&quot;'
+        }[tag] || tag)
+      );
+    }
+
+    // Mobile Navigation & Header Scroll Controller
+    function toggleMobileMenu(forceState) {
+      const menu = document.getElementById('mobileMenu');
+      const icon = document.getElementById('mobileMenuIcon');
+      if (!menu) return;
+
+      const shouldOpen = forceState !== undefined ? forceState : menu.classList.contains('hidden');
+      if (shouldOpen) {
+        menu.classList.remove('hidden');
+        if (icon) {
+          icon.classList.remove('fa-bars');
+          icon.classList.add('fa-xmark');
+        }
+      } else {
+        menu.classList.add('hidden');
+        if (icon) {
+          icon.classList.remove('fa-xmark');
+          icon.classList.add('fa-bars');
+        }
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const menuBtn = document.getElementById('mobileMenuBtn');
+      if (menuBtn) {
+        menuBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          toggleMobileMenu();
+        });
+      }
+
+      // Close mobile menu when tapping any navigation link
+      document.querySelectorAll('.mobile-nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+          toggleMobileMenu(false);
+        });
+      });
+
+      // Sticky Header dynamic elevation on scroll
+      const header = document.getElementById('mainHeader');
+      window.addEventListener('scroll', () => {
+        if (!header) return;
+        if (window.scrollY > 30) {
+          header.classList.add('bg-brand-dark/95', 'shadow-2xl', 'border-amber-500/20');
+          header.classList.remove('bg-brand-dark/90');
+        } else {
+          header.classList.remove('bg-brand-dark/95', 'shadow-2xl', 'border-amber-500/20');
+          header.classList.add('bg-brand-dark/90');
+        }
+      }, { passive: true });
+
+      // Initialize the first module in the Growth Machine inspector
+      selectModule(0);
+    });
+  </script>
+</body>
+</html>
